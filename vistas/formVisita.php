@@ -1,6 +1,3 @@
-<?php
-include 'vistas/cabecera.php';
-?>
 <br>
 <div class="row row-cols-1">
     <form class="form-horizontal">

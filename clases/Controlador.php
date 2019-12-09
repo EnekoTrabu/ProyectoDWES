@@ -4,6 +4,7 @@ class Controlador{
     
     public function run(){
         // TODO Listar animales
+        include 'vistas/cabecera.php';
         
         if(isset($_GET['anadir'])){
             $this->verAnadirAnimal();
