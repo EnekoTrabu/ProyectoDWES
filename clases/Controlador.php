@@ -16,8 +16,8 @@ class Controlador{
             exit;
         }
 
-        if(isset($_GET['inicio'])){
-            $this->verInicio();
+        if(isset($_GET['login'])){
+            $this->verLogin();
             exit;
         }
     }
@@ -30,7 +30,7 @@ class Controlador{
         include 'vistas/formVisita.php';
     }
 
-    private function verInicio(){
+    private function verLogin(){
         include 'vistas/formLogIn.php';
     }
 }

@@ -16,7 +16,7 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="index.php">
         <img src="img/favicon.png" width="30" height="30" class="d-inline-block align-top" alt="icono">
         Adóptame
     </a>
@@ -36,7 +36,7 @@
                     <a class="nav-link" href="index.php?visita=true">Concertar Visita</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php?inicio=true">Iniciar Sesion</a>
+                    <a class="nav-link" href="index.php?login=true">Iniciar Sesion</a>
                 </li>
             </ul>
         </div>
