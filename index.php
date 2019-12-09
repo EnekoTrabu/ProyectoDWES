@@ -210,7 +210,7 @@ include 'includes/cabecera.php';
                 <div class="form-group">
                     <label class="col-md-12 control-label" for="enviar"></label>
                     <div class="col-md-12">
-                        <button id="enviar" name="enviar" class="btn btn-primary">Enviar</button>
+                        <button id="enviar" name="enviar" class="btn btn-outline-dark btn-lg btn-block">Enviar</button>
                     </div>
                 </div>
 
