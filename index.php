@@ -3,6 +3,7 @@ include 'includes/cabecera.php';
 ?>
 
 <div class="container">
+<br><br><br>
     <div class="row row-cols-1">
         <form class="form-horizontal">
             <fieldset>
@@ -114,7 +115,7 @@ include 'includes/cabecera.php';
             </fieldset>
         </form>
     </div>
-
+    <br><br><br>
     <div class="row row-cols-1">
         <form class="form-horizontal">
             <fieldset>
