@@ -100,11 +100,11 @@
             </div>
             
             <!-- Input oculto -->
-            <div class="form-group">
+            <!--<div class="form-group">
                 <div class="col-md-12">
                     <input id="post" name="post" type="hidden" value="true" class="form-control input-md">
                 </div>
-            </div>
+            </div>-->
             
             <!-- Button -->
             <div class="form-group">
