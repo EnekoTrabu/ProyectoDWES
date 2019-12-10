@@ -1,6 +1,6 @@
 <br>
 <div class="row row-cols-1">
-    <form class="form-horizontal">
+    <form class="form-horizontal" action="index.php">
         <fieldset>
 
             <!-- Form Name -->
