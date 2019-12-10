@@ -1,6 +1,6 @@
 <br>
 <div class="row row-cols-1">
-    <form class="form-horizontal" action="index.php">
+    <form class="form-horizontal" action="index.php" method="GET">
         <fieldset>
 
             <!-- Form Name -->
@@ -103,7 +103,7 @@
             <div class="form-group">
                 <label class="col-md-12 control-label" for="enviar"></label>
                 <div class="col-md-12">
-                    <button id="enviar" name="enviar" class="btn btn-outline-dark btn-lg btn-block">Enviar</button>
+                    <button id="enviar" name="enviar" value="hola" class="btn btn-outline-dark btn-lg btn-block">Enviar</button>
                 </div>
             </div>
 

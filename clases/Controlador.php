@@ -4,22 +4,30 @@ class Controlador{
     
     public function run(){
         // TODO Listar animales
+        session_start();
+        include 'funciones/funciones.php';
         include 'vistas/cabecera.php';
-        include 'vistas/vistaInicio.php';
-        
-        if(isset($_GET['anadir'])){
-            $this->verAnadirAnimal();
-            exit;
-        }
 
-        if(isset($_GET['visita'])){
-            $this->verVisita();
-            exit;
-        }
+        if(isset($_GET['pagina'])){
+            $pagina = $_GET['pagina'];
 
-        if(isset($_GET['login'])){
-            $this->verLogin();
-            exit;
+            switch ($pagina) {
+                case 'animal':
+                    $this->verAnadirAnimal();
+                    break;
+    
+                case 'visita':
+                    $this->verVisita();
+                    break;
+    
+                case 'login':
+                    $this->verLogin();
+                    break;
+            }
+        } else {
+            $this->vistaInicio();
+
+            
         }
     }
 
@@ -34,5 +42,14 @@ class Controlador{
     private function verLogin(){
         include 'vistas/formLogIn.php';
     }
+
+    private function vistaInicio(){
+        include 'vistas/vistaInicio.php';
+        $_SESSION['valorTarjeta'][] = [
+            'nombre' => $_GET['nombre'],
+            'edad' => $_GET['edad'],
+        ];
+
+        
+    }
 }
-?>
