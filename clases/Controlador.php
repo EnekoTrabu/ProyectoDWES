@@ -45,10 +45,10 @@ class Controlador{
 
     private function vistaInicio(){
         include 'vistas/vistaInicio.php';
-        $_SESSION['valorTarjeta'][] = [
+        /*$_SESSION['valorTarjeta'][] = [
             'nombre' => $_GET['nombre'],
             'edad' => $_GET['edad'],
-        ];
+        ];*/
 
         
     }
