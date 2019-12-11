@@ -16,10 +16,10 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="index.php">
-        <img src="img/favicon.png" width="30" height="30" class="d-inline-block align-top" alt="icono">
-        Adóptame
-    </a>
+        <a class="navbar-brand" href="index.php">
+            <img src="img/favicon.png" width="30" height="30" class="d-inline-block align-top" alt="icono">
+            Adóptame
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -32,15 +32,16 @@
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?pagina=animal">Añadir adopción</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="index.php?pagina=visita">Concertar Visita</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?pagina=login">Iniciar Sesion</a>
-                </li>
+                </li> -->
             </ul>
         </div>
     </nav>
     <main>
         <section>
             <div class="container">
+                

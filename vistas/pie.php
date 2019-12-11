@@ -1,4 +1,5 @@
 </div>
+</div>
 </section>
     </main>
     <footer class="page-footer font-small bg-dark pt-4 text-light">

@@ -1,6 +1,6 @@
 <br>
 <div class="row row-cols-1">
-    <form class="form-horizontal" action="index.php" method="GET">
+    <form class="form-horizontal" action="index.php" method="POST">
         <fieldset>
 
             <!-- Form Name -->
@@ -53,7 +53,7 @@
             </div>
 
             <!-- Select Basic -->
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label class="col-md-12 control-label" for="tipo">Tipo de animal</label>
                 <div class="col-md-12">
                     <select id="tipo" name="tipo" class="form-control">
@@ -61,7 +61,7 @@
                         <option value="Gato">Gato</option>
                     </select>
                 </div>
-            </div>
+            </div> -->
 
             <!-- Text input-->
             <div class="form-group">
@@ -85,8 +85,8 @@
                 <label class="col-md-12 control-label" for="salud">Salud</label>
                 <div class="col-md-12">
                     <select id="salud" name="salud" class="form-control">
-                        <option value="buena">Buena salud</option>
-                        <option value="mala">Mala salud</option>
+                        <option value="Buena Salud">Buena salud</option>
+                        <option value="Mala Salud">Mala salud</option>
                     </select>
                 </div>
             </div>
