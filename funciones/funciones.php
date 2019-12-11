@@ -1,5 +1,20 @@
 <?php
-
+/**
+ * Función para crear una tarjeta con una nueva adopción.
+ * 
+ * @author Itziar Roldán <itziar21roldan@gmail.com>
+ * 
+ * @param $nombre string
+ * @param $edad integer
+ * @param $procedencia string
+ * @param $genero string
+ * @param $raza string
+ * @param $foto string
+ * @param $salud string
+ * @param $descripcion string
+ * 
+ * @return $tarjeta Código HTML
+ */
 function crearTarjeta($nombre, $edad, $procedencia, $genero, $raza, $foto, $salud, $descripcion)
 {
     $tarjeta = "";
