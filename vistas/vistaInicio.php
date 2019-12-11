@@ -1,5 +1,3 @@
-
-
     <div class="card col-md-6 bg-light border border-dark mt-3 mb-3">
         <br>
         <div class="card-header border-top border-secondary">
