@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Función para crear una tarjeta con una nueva adopción.
  * 

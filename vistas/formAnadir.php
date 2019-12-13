@@ -1,6 +1,6 @@
 <br>
 <div class="row row-cols-1">
-    <form class="form-horizontal" action="index.php" method="POST">
+    <form class="form-horizontal" action="" method="POST">
         <fieldset>
 
             <!-- Form Name -->
@@ -98,14 +98,14 @@
                     <textarea class="form-control" id="descripcion" name="descripcion" placeholder="Introduzca una pequeña descripción del animal"></textarea>
                 </div>
             </div>
-            
+
             <!-- Input oculto -->
             <!--<div class="form-group">
                 <div class="col-md-12">
                     <input id="post" name="post" type="hidden" value="true" class="form-control input-md">
                 </div>
             </div>-->
-            
+
             <!-- Button -->
             <div class="form-group">
                 <label class="col-md-12 control-label" for="enviar"></label>
@@ -119,5 +119,8 @@
 </div>
 <br>
 <?php
+if(isset($_POST['enviar'])){
+    include 'vistas/vistaInicio.php';
+}
 include 'vistas/pie.php';
 ?>
