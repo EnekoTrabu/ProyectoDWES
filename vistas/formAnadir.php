@@ -1,6 +1,6 @@
 <br>
 <div class="row row-cols-1">
-    <form class="form-horizontal" action="index.php" method="POST">
+    <form class="form-horizontal" action="" method="POST">
         <fieldset>
 
             <!-- Form Name -->
@@ -119,5 +119,8 @@
 </div>
 <br>
 <?php
+if(isset($_POST['enviar'])){
+    include 'vistas/vistaInicio.php';
+}
 include 'vistas/pie.php';
 ?>
