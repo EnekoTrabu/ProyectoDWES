@@ -119,8 +119,6 @@
 </div>
 <br>
 <?php
-if(isset($_POST['enviar'])){
-    include 'vistas/vistaInicio.php';
-}
+include 'vistas/vistaInicio.php';
 include 'vistas/pie.php';
 ?>
