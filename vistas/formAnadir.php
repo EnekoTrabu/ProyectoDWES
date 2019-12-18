@@ -10,7 +10,7 @@
             <div class="form-group">
                 <label class="col-md-12 control-label" for="nombre">Nombre</label>
                 <div class="col-md-12">
-                    <input id="nombre" name="nombre" type="text" placeholder="Nombre" class="form-control input-md">
+                    <input id="nombre" name="nombre" type="text" placeholder="Nombre" class="form-control input-md" value="<?php echo Input::get('nombre') ?>"> 
                     <span class="help-block">Introduzca el nombre del animal</span>
                 </div>
             </div>
@@ -19,7 +19,7 @@
             <div class="form-group">
                 <label class="col-md-12 control-label" for="edad">Edad</label>
                 <div class="col-md-12">
-                    <input id="edad" name="edad" type="text" placeholder="Edad" class="form-control input-md">
+                    <input id="edad" name="edad" type="text" placeholder="Edad" class="form-control input-md" value="<?php echo Input::get('edad') ?>">
                     <span class="help-block">Introduzca la edad del animal</span>
                 </div>
             </div>
@@ -28,7 +28,7 @@
             <div class="form-group">
                 <label class="col-md-12 control-label" for="procedencia">Procedencia</label>
                 <div class="col-md-12">
-                    <input id="procedencia" name="procedencia" type="text" placeholder="Procedencia" class="form-control input-md">
+                    <input id="procedencia" name="procedencia" type="text" placeholder="Procedencia" class="form-control input-md" value="<?php echo Input::get('procedencia') ?>">
                     <span class="help-block">Introduzca la procedencia del animal</span>
                 </div>
             </div>
@@ -67,7 +67,7 @@
             <div class="form-group">
                 <label class="col-md-12 control-label" for="raza">Raza</label>
                 <div class="col-md-12">
-                    <input id="raza" name="raza" type="text" placeholder="Raza" class="form-control input-md">
+                    <input id="raza" name="raza" type="text" placeholder="Raza" class="form-control input-md" value="<?php echo Input::get('raza') ?>">
                     <span class="help-block">Introduzca la raza del animal</span>
                 </div>
             </div>
@@ -95,7 +95,7 @@
             <div class="form-group">
                 <label class="col-md-12 control-label" for="descripcion">Descripción</label>
                 <div class="col-md-12">
-                    <textarea class="form-control" id="descripcion" name="descripcion" placeholder="Introduzca una pequeña descripción del animal"></textarea>
+                    <textarea class="form-control" id="descripcion" name="descripcion" placeholder="Introduzca una pequeña descripción del animal" ><?php echo Input::get('descripcion') ?></textarea>
                 </div>
             </div>
 
