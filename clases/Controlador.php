@@ -51,4 +51,20 @@ class Controlador
         include 'vistas/vistaInicio.php';
         include 'vistas/pie.php';
     }
+
+    private function crearReglasValidacion()
+    {
+        $reglasValidacion = array(
+            "nombre" => array('required' => true),
+            "edad" => array('onlynumber' => true, 'min' => 0, 'required' => true),
+            "procedencia" => array('required' => false),
+            "genero" => array('checked' => true),
+            "raza" => array('required' => false),
+            "foto" => array('required' => true),
+            "salud" => array('selected' => true),
+            "descripcion" => array('required' => true)
+        );
+
+        return $reglasValidacion;
+    }
 }
