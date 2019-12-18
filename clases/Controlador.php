@@ -33,6 +33,7 @@ class Controlador
 
     private function verAnadirAnimal()
     {
+        include 'helper/Input.php';
         include 'vistas/formAnadir.php';
     }
 
