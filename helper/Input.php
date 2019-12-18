@@ -2,16 +2,18 @@
 
 class Input
 {
-    public static function get($dato){
-        if(isset($_POST[$dato])){
+    public static function get($dato)
+    {
+        if (isset($_POST[$dato])) {
             $dato = $_POST[$dato];
-        }else{
+        } else {
             $dato = "";
         }
         return Input::filtrar($dato);
     }
 
-    public static function filtrar($dato){
+    public static function filtrar($dato)
+    {
         //Elimina las etiquetas HTML
         $filtrado = strip_tags($dato);
         //Convierte los carácteres especiales a código
@@ -20,5 +22,11 @@ class Input
         $filtrado = trim($filtrado);
 
         return $filtrado;
+    }
+
+    public static function verificarLista($valor,$valorMenu){
+        if ($valor == $valorMenu){
+            echo ' selected = "selected"';
+        }
     }
 }

@@ -68,4 +68,11 @@ class Controlador
 
         return $reglasValidacion;
     }
+
+    private function validar(){
+        $validador = new ValidarForm();
+        $reglasValidacion = $this->crearReglasValidacion();
+        $validador->validar($_POST, $reglasValidacion);
+        
+    }
 }

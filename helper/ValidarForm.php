@@ -54,7 +54,23 @@ class ValidarForm
 
     public function addError($nombreCampo, $error)
     {
-        $errores[$nombreCampo] = $error;
+        $this->errores[$nombreCampo] = $error;
+    }
+
+    public function esValido(){
+        if(empty($this->errores)){
+            $this->valido = true;
+        }
+
+        return $this->valido;
+    }
+
+    public function getErrores(){
+        return $this->errores;
+    }
+
+    public function getMensajeError($campo){
+        return $this->errores[$campo];
     }
 }
 

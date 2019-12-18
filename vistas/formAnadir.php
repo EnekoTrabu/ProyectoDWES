@@ -10,7 +10,7 @@
             <div class="form-group">
                 <label class="col-md-12 control-label" for="nombre">Nombre</label>
                 <div class="col-md-12">
-                    <input id="nombre" name="nombre" type="text" placeholder="Nombre" class="form-control input-md" value="<?php echo Input::get('nombre') ?>"> 
+                    <input id="nombre" name="nombre" type="text" placeholder="Nombre" class="form-control input-md" value="<?php echo Input::get('nombre') ?>">
                     <span class="help-block">Introduzca el nombre del animal</span>
                 </div>
             </div>
@@ -95,7 +95,7 @@
             <div class="form-group">
                 <label class="col-md-12 control-label" for="descripcion">Descripción</label>
                 <div class="col-md-12">
-                    <textarea class="form-control" id="descripcion" name="descripcion" placeholder="Introduzca una pequeña descripción del animal" ><?php echo Input::get('descripcion') ?></textarea>
+                    <textarea class="form-control" id="descripcion" name="descripcion" placeholder="Introduzca una pequeña descripción del animal"><?php echo Input::get('descripcion') ?></textarea>
                 </div>
             </div>
 
@@ -119,6 +119,6 @@
 </div>
 <br>
 <?php
-include 'vistas/vistaInicio.php';
-include 'vistas/pie.php';
+    include 'vistas/vistaInicio.php';
+    include 'vistas/pie.php';
 ?>
