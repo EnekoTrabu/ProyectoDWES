@@ -29,15 +29,6 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="index.php">Inicio <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php?pagina=animal">Añadir adopción</a>
-                </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="index.php?pagina=visita">Concertar Visita</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php?pagina=login">Iniciar Sesion</a>
-                </li> -->
             </ul>
         </div>
     </nav>

@@ -2,6 +2,17 @@
 
 class Input
 {
+    public static function siEnviado($tipo = 'post'){
+        switch ($tipo) {
+            case 'post':
+                return !empty($_POST);
+                break;
+            
+            default:
+                return false;
+                break;
+        }
+    }
     public static function get($dato)
     {
         if (isset($_POST[$dato])) {

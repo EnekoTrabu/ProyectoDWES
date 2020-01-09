@@ -1,4 +1,17 @@
 <br>
+<?php
+    if(Input::siEnviado("post")){
+        $errores = $validador->getErrores();
+
+        if(!empty($errores)){
+            echo "<div class='errores'>";
+            foreach($errores as $campo => $mensajeError){
+                echo "<p>$campo - $mensajeError</p>\n";
+            }
+            echo "</div>";
+        }
+    }
+?>
 <div class="row row-cols-1">
     <form class="form-horizontal" action="" method="POST">
         <fieldset>
@@ -110,7 +123,7 @@
             <div class="form-group">
                 <label class="col-md-12 control-label" for="enviar"></label>
                 <div class="col-md-12">
-                    <button id="enviar" name="enviar" value="hola" class="btn btn-outline-dark btn-lg btn-block">Enviar</button>
+                    <button id="enviar" name="enviar" value="validar" class="btn btn-outline-dark btn-lg btn-block">Validar</button>
                 </div>
             </div>
 
@@ -118,7 +131,12 @@
     </form>
 </div>
 <br>
+
 <?php
-    include 'vistas/vistaInicio.php';
+    echo "<div class='resultado'>";
+    if(isset($resultado)){
+        echo $resultado;
+    }
+    echo "</div>";
     include 'vistas/pie.php';
 ?>
