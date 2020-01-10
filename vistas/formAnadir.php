@@ -4,10 +4,13 @@
         $errores = $validador->getErrores();
 
         if(!empty($errores)){
-            echo "<div class='errores'>";
+            echo "<div class='alert alert-danger errores alert-dismissible fade show' role='alert'>";
             foreach($errores as $campo => $mensajeError){
-                echo "<p>$campo - $mensajeError</p>\n";
+                echo "<p>". ucfirst($campo) . " - $mensajeError</p>\n";
             }
+            echo "<button type='button' class='close' data-dismiss='alert' aria-label='Close'>";
+            echo "<span aria-hidden='true'>&times;</span>";
+            echo "</button>";
             echo "</div>";
         }
     }

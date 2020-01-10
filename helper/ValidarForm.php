@@ -25,13 +25,13 @@ class ValidarForm
 
                         if ($nombreRegla === 'onlynumber' && $valorRegla) {
                             if (!is_numeric($valor)) {
-                                $this -> addError($nombreCampo, "Debes introducir un numero.");
+                                $this -> addError($nombreCampo, "Debes introducir un número.");
                             }
                         }
 
                         if ($nombreRegla === 'min' && $valorRegla) {
                             if ($valor < 0) {
-                                $this -> addError($nombreCampo, "El valor minimo es 0 años.");
+                                $this -> addError($nombreCampo, "El valor mínimo es 0 años.");
                             }
                         }
 
