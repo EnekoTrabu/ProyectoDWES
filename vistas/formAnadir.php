@@ -141,5 +141,5 @@
         echo $resultado;
     }
     echo "</div>";
-    include 'vistas/pie.php';
+    include 'includes/pie.php';
 ?>
