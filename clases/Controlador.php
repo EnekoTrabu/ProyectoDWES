@@ -9,7 +9,7 @@ class Controlador
         // TODO Listar animales
         session_start();
         include 'funciones/funciones.php';
-        include 'vistas/cabecera.php';
+        include 'includes/cabecera.php';
 
         if (!isset($_POST['enviar'])) { //no se ha enviado el formulario // primera petición
             //se llama al método para mostrar el formulario inicial
