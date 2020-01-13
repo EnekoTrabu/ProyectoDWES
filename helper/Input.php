@@ -2,12 +2,13 @@
 
 class Input
 {
-    public static function siEnviado($tipo = 'post'){
+    public static function siEnviado($tipo = 'post')
+    {
         switch ($tipo) {
             case 'post':
                 return !empty($_POST);
                 break;
-            
+
             default:
                 return false;
                 break;
@@ -35,8 +36,9 @@ class Input
         return $filtrado;
     }
 
-    public static function verificarLista($valor,$valorMenu){
-        if ($valor == $valorMenu){
+    public static function verificarLista($valor, $valorMenu)
+    {
+        if ($valor == $valorMenu) {
             echo ' selected = "selected"';
         }
     }

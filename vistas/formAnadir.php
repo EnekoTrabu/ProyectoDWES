@@ -1,19 +1,19 @@
 <br>
 <?php
-    if(Input::siEnviado("post")){
-        $errores = $validador->getErrores();
+if (Input::siEnviado("post")) {
+    $errores = $validador->getErrores();
 
-        if(!empty($errores)){
-            echo "<div class='alert alert-danger errores alert-dismissible fade show' role='alert'>";
-            foreach($errores as $campo => $mensajeError){
-                echo "<p>". ucfirst($campo) . " - $mensajeError</p>\n";
-            }
-            echo "<button type='button' class='close' data-dismiss='alert' aria-label='Close'>";
-            echo "<span aria-hidden='true'>&times;</span>";
-            echo "</button>";
-            echo "</div>";
+    if (!empty($errores)) {
+        echo "<div class='alert alert-danger errores alert-dismissible fade show' role='alert'>";
+        foreach ($errores as $campo => $mensajeError) {
+            echo "<p>" . ucfirst($campo) . " - $mensajeError</p>\n";
         }
+        echo "<button type='button' class='close' data-dismiss='alert' aria-label='Close'>";
+        echo "<span aria-hidden='true'>&times;</span>";
+        echo "</button>";
+        echo "</div>";
     }
+}
 ?>
 <div class="row row-cols-1">
     <form class="form-horizontal" action="" method="POST">
@@ -67,17 +67,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Select Basic -->
-            <!-- <div class="form-group">
-                <label class="col-md-12 control-label" for="tipo">Tipo de animal</label>
-                <div class="col-md-12">
-                    <select id="tipo" name="tipo" class="form-control">
-                        <option value="Perro">Perro</option>
-                        <option value="Gato">Gato</option>
-                    </select>
-                </div>
-            </div> -->
 
             <!-- Text input-->
             <div class="form-group">
@@ -136,10 +125,10 @@
 <br>
 
 <?php
-    echo "<div class='resultado'>";
-    if(isset($resultado)){
-        echo $resultado;
-    }
-    echo "</div>";
-    include 'includes/pie.php';
+echo "<div class='resultado'>";
+if (isset($resultado)) {
+    echo $resultado;
+}
+echo "</div>";
+include 'includes/pie.php';
 ?>

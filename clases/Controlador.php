@@ -51,7 +51,8 @@ class Controlador
         return $reglasValidacion;
     }
 
-    private function validar(){
+    private function validar()
+    {
         $validador = new ValidarForm();
         $reglasValidacion = $this->crearReglasValidacion();
         $validador->validar($_POST, $reglasValidacion);
@@ -66,7 +67,7 @@ class Controlador
             $salud = $_POST['salud'];
             $descripcion = $_POST['descripcion'];
             $resultado = crearTarjeta($nombre, $edad, $procedencia, $genero, $raza, $foto, $salud, $descripcion);
-        
+
             $this->mostrarFormulario("continuar", $validador, $resultado);
             exit();
         }

@@ -19,31 +19,31 @@ class ValidarForm
                     foreach ($reglasCampo as $nombreRegla => $valorRegla) {
                         if ($nombreRegla === "required" && $valorRegla) {
                             if (empty($valor)) {
-                               $this -> addError($nombreCampo, "El campo es obligatorio.");
+                                $this->addError($nombreCampo, "El campo es obligatorio.");
                             }
                         }
 
                         if ($nombreRegla === 'onlynumber' && $valorRegla) {
                             if (!is_numeric($valor)) {
-                                $this -> addError($nombreCampo, "Debes introducir un número.");
+                                $this->addError($nombreCampo, "Debes introducir un número.");
                             }
                         }
 
                         if ($nombreRegla === 'min' && $valorRegla) {
                             if ($valor < 0) {
-                                $this -> addError($nombreCampo, "El valor mínimo es 0 años.");
+                                $this->addError($nombreCampo, "El valor mínimo es 0 años.");
                             }
                         }
 
                         if ($nombreRegla === 'checked' && $valorRegla) {
                             if (empty($valor)) {
-                                $this -> addError($nombreCampo, "No se ha seleccionado un valor.");
+                                $this->addError($nombreCampo, "No se ha seleccionado un valor.");
                             }
                         }
 
                         if ($nombreRegla === 'selected' && $valorRegla) {
                             if (empty($valor)) {
-                                $this -> addError($nombreCampo, "No se ha seleccionado un valor.");
+                                $this->addError($nombreCampo, "No se ha seleccionado un valor.");
                             }
                         }
                     }
@@ -57,20 +57,22 @@ class ValidarForm
         $this->errores[$nombreCampo] = $error;
     }
 
-    public function esValido(){
-        if(empty($this->errores)){
+    public function esValido()
+    {
+        if (empty($this->errores)) {
             $this->valido = true;
         }
 
         return $this->valido;
     }
 
-    public function getErrores(){
+    public function getErrores()
+    {
         return $this->errores;
     }
 
-    public function getMensajeError($campo){
+    public function getMensajeError($campo)
+    {
         return $this->errores[$campo];
     }
 }
-
