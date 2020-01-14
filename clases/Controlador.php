@@ -3,37 +3,38 @@ include 'helper/ValidarForm.php';
 
 class Controlador
 {
-
     public function run()
     {
         // TODO Listar animales
-        session_start();
         include 'funciones/funciones.php';
         include 'includes/cabecera.php';
 
-        if (!isset($_POST['enviar'])) { //no se ha enviado el formulario // primera petición
-            //se llama al método para mostrar el formulario inicial
+        // Si no se ha enviado el formulario
+        // Se llama al método para mostrar el formulario inicial
+        if (!isset($_POST['enviar'])) {
             $this->mostrarFormulario("validar", null, null);
             exit();
         }
-        if (isset($_POST['enviar']) && ($_POST['enviar']) == 'validar') { //se ha enviado el formulario //se valida el formulario
+        // Si se ha enviado el formulario y los datos del formulario son validos
+        // Introduce la tarjeta con dichos valores
+        if (isset($_POST['enviar']) && ($_POST['enviar']) == 'validar') {
             $this->validar();
-            exit();
-        }
-        if (isset($_POST['enviar']) && ($_POST['enviar']) == 'continuar') { //se ha enviado el formulario
-            //Terminar
-            unset($_POST); //Se deja limpio $_POST como la primera vez
-            //echo 'Programa Finalizado';
-            $this->mostrarFormulario("validar", null, null);
             exit();
         }
     }
 
+    // Se muestra la vista del formulario (la plantilla formAnadir.php) 
     private function mostrarFormulario($fase, $validador, $resultado)
     {
-        //se muestra la vista del formulario (la plantilla form_bienvenida.php) 
         include 'vistas/formAnadir.php';
     }
+
+    /**
+     * Crear las reglas de validación
+     * 
+     * @author Itziar Roldan <itziar21roldan@gmail.com>
+     * @return $reglasValidacion Array con las reglas de validación
+     */
 
     private function crearReglasValidacion()
     {
@@ -47,17 +48,18 @@ class Controlador
             "salud" => array('selected' => true),
             "descripcion" => array('required' => true)
         );
-
         return $reglasValidacion;
     }
 
+    // Valida el formulario
     private function validar()
     {
         $validador = new ValidarForm();
         $reglasValidacion = $this->crearReglasValidacion();
         $validador->validar($_POST, $reglasValidacion);
-        if ($validador->esValido()) {  // formulario correcto, recoger datos y 
-            //volver a mostrar formulario con el resultado correcto
+        // Si el formulario es correcto
+        // Recoge los datos y vuelve a mostrar el formulario con el resultado en una tarjeta
+        if ($validador->esValido()) {
             $nombre = $_POST['nombre'];
             $edad =  $_POST['edad'];
             $procedencia = $_POST['procedencia'];

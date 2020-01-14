@@ -11,6 +11,14 @@ class ValidarForm
     {
     }
 
+    /**
+     * Recorre todos los campos, comprueba si se cumplen las normas y en caso de que no lo haga,
+     * añade un error con su correspondiente mensaje.
+     * 
+     * @author Itziar Roldan <itziar21roldan@gmail.com>
+     * @param $fuente Array con los valores del formulario
+     * @param $reglasValidacion Array con las reglas de validación
+     */
     public function validar($fuente, $reglasValidacion)
     {
         foreach ($fuente as $campo => $valor) {
@@ -29,6 +37,7 @@ class ValidarForm
                             }
                         }
 
+                        // No sale esta regla
                         if ($nombreRegla === 'min' && $valorRegla) {
                             if ($valor < 0) {
                                 $this->addError($nombreCampo, "El valor mínimo es 0 años.");

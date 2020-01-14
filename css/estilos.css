@@ -1,3 +1,5 @@
+/* Estilo para el Legend */
+
 legend {
     background-color: #343A40;
     color: white;
@@ -5,6 +7,8 @@ legend {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
+
+/* Estilo para el formulario */
 
 form {
     border: 2px solid #343A40;

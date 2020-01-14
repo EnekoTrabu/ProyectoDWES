@@ -1,8 +1,7 @@
 <?php
-//carga de clases 
+// Carga de clases 
 function miautoCargador($clase)
 {
-
     $paths = array("controladores", "helper");
 
     // Buscamos en cada ruta los archivos

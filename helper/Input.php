@@ -1,5 +1,7 @@
 <?php
 
+// Clase Input: Contiene funciones para las entradas
+
 class Input
 {
     public static function siEnviado($tipo = 'post')
@@ -26,11 +28,11 @@ class Input
 
     public static function filtrar($dato)
     {
-        //Elimina las etiquetas HTML
+        // Elimina las etiquetas HTML
         $filtrado = strip_tags($dato);
-        //Convierte los carácteres especiales a código
+        // Convierte los carácteres especiales a código
         $filtrado = htmlspecialchars($filtrado);
-        //Elimina los espacios en blanco al principio y al final
+        // Elimina los espacios en blanco al principio y al final
         $filtrado = trim($filtrado);
 
         return $filtrado;
