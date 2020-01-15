@@ -29,8 +29,18 @@ function crearTarjeta($nombre, $edad, $procedencia, $genero, $raza, $foto, $salu
     $tarjeta .= '<div class="card-body">';
     $tarjeta .= '<img src="img/' . $foto . '" class="img-fluid" alt="">';
     $tarjeta .= '<br><br>';
-    $tarjeta .= '<h6 class="card-subtitle mb-2 text-muted">Procedencia: <em>' . $procedencia . '</em></h6>';
-    $tarjeta .= '<h6 class="card-subtitle mb-2 text-muted">' . $raza . ' - ' . $genero . '</h6>';
+    if ($procedencia == "") {
+        $tarjeta .= '<h6 class="card-subtitle mb-2 text-muted">Procedencia: <em>Sin especificar</em></h6>';
+    } else {
+        $tarjeta .= '<h6 class="card-subtitle mb-2 text-muted">Procedencia: <em>' . $procedencia . '</em></h6>';
+    }
+
+    if ($raza == "") {
+        $tarjeta .= '<h6 class="card-subtitle mb-2 text-muted">' . $genero . '</h6>';
+    } else {
+        $tarjeta .= '<h6 class="card-subtitle mb-2 text-muted">' . $raza . ' - ' . $genero . '</h6>';
+    }
+
     $tarjeta .= '<h6 class="card-subtitle mb-2 text-muted">' . $salud . '</h6>';
     $tarjeta .= '<p class="card-text">' . $descripcion . '</p>';
     $tarjeta .= '</div>';
