@@ -37,9 +37,8 @@ class ValidarForm
                             }
                         }
 
-                        // No sale esta regla
-                        if ($nombreRegla === 'min' && $valorRegla) {
-                            if ($valor < 0) {
+                        if ($nombreRegla === 'min') {
+                            if ($valor < $valorRegla) {
                                 $this->addError($nombreCampo, "El valor mínimo es 0 años.");
                             }
                         }
