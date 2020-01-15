@@ -55,13 +55,15 @@ if (Input::siEnviado("post")) {
                 <div class="col-md-12">
                     <div class="radio">
                         <label for="genero-0">
-                            <input type="radio" name="genero" id="genero-0" value="Macho" checked="checked">
+                            <input type="radio" name="genero" id="genero-0" value="Macho" 
+                            <?php if(Input::get('genero') == "Macho") echo "checked='checked'" ?>>
                             Macho
                         </label>
                     </div>
                     <div class="radio">
                         <label for="genero-1">
-                            <input type="radio" name="genero" id="genero-1" value="Hembra">
+                            <input type="radio" name="genero" id="genero-1" value="Hembra" 
+                            <?php if(Input::get('genero') == "Hembra") echo "checked='checked'" ?>  >
                             Hembra
                         </label>
                     </div>
@@ -90,8 +92,21 @@ if (Input::siEnviado("post")) {
                 <label class="col-md-12 control-label" for="salud">Salud</label>
                 <div class="col-md-12">
                     <select id="salud" name="salud" class="form-control">
-                        <option value="Buena Salud">Buena salud</option>
-                        <option value="Mala Salud">Mala salud</option>
+                        <?php
+                            if(Input::get('salud') == "Buena Salud"){
+                                echo "<option value='Buena Salud' selected >Buena salud</option>";
+                            } else {
+                                echo "<option value='Buena Salud'>Buena salud</option>";
+                            }
+
+                            if(Input::get('salud') == "Mala Salud"){
+                                echo "<option value='Mala Salud' selected >Mala salud</option>";
+                            } else {
+                                echo "<option value='Mala Salud'>Mala salud</option>";
+                            }
+                        ?>
+                        
+                        
                     </select>
                 </div>
             </div>
