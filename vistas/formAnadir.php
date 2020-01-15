@@ -55,7 +55,7 @@ if (Input::siEnviado("post")) {
                 <div class="col-md-12">
                     <div class="radio">
                         <label for="genero-0">
-                            <input type="radio" name="genero" id="genero-0" value="Macho" <?php if (Input::get('genero') == "Macho") echo "checked='checked'" ?>>
+                            <input type="radio" name="genero" id="genero-0" value="Macho" checked='checked'>
                             Macho
                         </label>
                     </div>
