@@ -16,7 +16,7 @@ if (Input::siEnviado("post")) {
 }
 ?>
 <div class="row row-cols-1">
-    <form class="form-horizontal" action="" method="POST">
+    <form class="form-horizontal formulario" action="" method="POST">
         <fieldset>
 
             <!-- Form Name -->
@@ -128,7 +128,7 @@ if (Input::siEnviado("post")) {
             <div class="form-group">
                 <label class="col-md-12 control-label" for="enviar"></label>
                 <div class="col-md-12">
-                    <button id="enviar" name="enviar" value="validar" class="btn btn-outline-dark btn-lg btn-block">Validar</button>
+                    <button id="enviar" name="enviar" value="validar" class="btn btn-outline-dark btn-lg btn-block enviar">Validar</button>
                 </div>
             </div>
 
