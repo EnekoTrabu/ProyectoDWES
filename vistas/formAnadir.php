@@ -50,9 +50,9 @@ if (Input::siEnviado("post")) {
             </div>
 
             <!-- Multiple Radios -->
-            <div class="form-group">
+            <div class="form-group" >
                 <label class="col-md-12 control-label" for="genero">Género</label>
-                <div class="col-md-12">
+                <div class="col-md-12" id="genero">
                     <div class="radio">
                         <label for="genero-0">
                             <input type="radio" name="genero" id="genero-0" value="Macho" <?php Utilidades::verificarBotones(Input::get('genero'), "Macho")?>>
