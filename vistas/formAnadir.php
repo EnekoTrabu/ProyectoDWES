@@ -4,7 +4,7 @@ if (Input::siEnviado("post")) {
     $errores = $validador->getErrores();
 
     if (!empty($errores)) {
-        echo "<div class='alert alert-danger errores alert-dismissible fade show' role='alert'>";
+        echo "<div class='alert alert-danger errores alert-dismissible fade show border border-danger' role='alert'>";
         foreach ($errores as $campo => $mensajeError) {
             echo "<p>" . ucfirst($campo) . " - $mensajeError</p>\n";
         }
