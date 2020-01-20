@@ -56,6 +56,9 @@ class Controlador
     {
         $validador = new ValidarForm();
         $reglasValidacion = $this->crearReglasValidacion();
+        if(!isset($_POST['genero'])){
+            $_POST['genero'] = "";
+        }
         $validador->validar($_POST, $reglasValidacion);
         // Si el formulario es correcto
         // Recoge los datos y vuelve a mostrar el formulario con el resultado en una tarjeta
