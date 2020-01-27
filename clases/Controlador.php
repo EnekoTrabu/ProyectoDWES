@@ -39,6 +39,7 @@ class Controlador
     private function crearReglasValidacion()
     {
         $reglasValidacion = array(
+            "numchip" => array('formato' => true, 'required' => true), 
             "nombre" => array('required' => true),
             "edad" => array('onlynumber' => true, 'min' => 0, 'required' => true),
             "procedencia" => array('required' => false),

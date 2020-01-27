@@ -54,6 +54,13 @@ class ValidarForm
                                 $this->addError($nombreCampo, "No se ha seleccionado un valor.");
                             }
                         }
+
+                        if ($nombreRegla === 'formato' && $valorRegla){
+                            $patron = "/[0-9]{8}[a-zA-Z]/";
+                            if(!preg_match($patron, $valor)){
+                                $this->addError($nombreCampo, "El formato del chip es erroneo");
+                            }
+                        }
                     }
                 }
             }
