@@ -59,18 +59,18 @@ if (Input::siEnviado("post")) {
             </div>
 
             <!-- Multiple Radios -->
-            <div class="form-group" >
+            <div class="form-group">
                 <label class="col-md-12 control-label" for="genero">Género</label>
                 <div class="col-md-12" id="genero">
                     <div class="radio">
                         <label for="genero-0">
-                            <input type="radio" name="genero" id="genero-0" value="Macho" <?php Utilidades::verificarBotones(Input::get('genero'), "Macho")?>>
+                            <input type="radio" name="genero" id="genero-0" value="Macho" <?php Utilidades::verificarBotones(Input::get('genero'), "Macho") ?>>
                             Macho
                         </label>
                     </div>
                     <div class="radio">
                         <label for="genero-1">
-                            <input type="radio" name="genero" id="genero-1" value="Hembra" <?php Utilidades::verificarBotones(Input::get('genero'), "Hembra")?>>
+                            <input type="radio" name="genero" id="genero-1" value="Hembra" <?php Utilidades::verificarBotones(Input::get('genero'), "Hembra") ?>>
                             Hembra
                         </label>
                     </div>
@@ -100,12 +100,12 @@ if (Input::siEnviado("post")) {
                 <div class="col-md-12">
                     <select id="salud" name="salud" class="form-control">
                         <?php
-                            $valores = ["Buena Salud", "Mala Salud"];
-                            foreach ($valores as $val){
-                                echo "<option value='$val'";
-                                echo Utilidades::verificarLista(Input::get('salud'), $val);
-                                echo ">$val</option>";
-                            }
+                        $valores = ["Buena Salud", "Mala Salud"];
+                        foreach ($valores as $val) {
+                            echo "<option value='$val'";
+                            echo Utilidades::verificarLista(Input::get('salud'), $val);
+                            echo ">$val</option>";
+                        }
                         ?>
 
                     </select>

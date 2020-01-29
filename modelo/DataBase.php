@@ -27,7 +27,7 @@ class DataBase implements IDataBase
 
     public function ejecutarSQL($sql)
     {
-        //los select
+        /*//los select
         //Query
         $db = $this->conectar();
 
@@ -37,16 +37,38 @@ class DataBase implements IDataBase
             echo "  <p>Error al crear el registro.<p>\n";
         }
 
-        $this->desconectar();
+        $this->desconectar();*/
+        try {
+            $result = $this->conexion->query($sql);
+            return $result;
+        } catch (Exception $ex) {
+            $error = $ex->getMessage();
+            include "vistas/error.php";
+            exit();
+        }
     }
 
     public function ejecutarSQLactualizacion($sql, $args)
     {
-        //insert, delete, update
+        /*//insert, delete, update
         //prepare
         $db = $this->conectar();
 
         $result = $db->prepare($sql);
-        $result->execute();
+        $result->execute();*/
+        try {
+            $result = $this->conexion->prepare($sql);
+            $result->execute($args);
+        } catch (PDOException $ex) {
+            $error = $ex->getMessage();
+            include "vistas/error.php";
+            exit();
+        }
+    }
+
+    public function cantidadFilas($result)
+    {
+        $filas = $result->num_rows();
+        return $filas;
     }
 }

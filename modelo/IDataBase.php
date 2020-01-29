@@ -1,6 +1,7 @@
 <?php
 
-interface IDataBase{
+interface IDataBase
+{
 
     public function conectar();
 

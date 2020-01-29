@@ -3,6 +3,8 @@ include 'helper/ValidarForm.php';
 
 class Controlador
 {
+    private $dao;
+
     public function run()
     {
         // TODO Listar animales
@@ -39,7 +41,7 @@ class Controlador
     private function crearReglasValidacion()
     {
         $reglasValidacion = array(
-            "numchip" => array('formato' => true, 'required' => true), 
+            "numchip" => array('formato' => true, 'required' => true),
             "nombre" => array('required' => true),
             "edad" => array('onlynumber' => true, 'min' => 0, 'required' => true),
             "procedencia" => array('required' => false),
@@ -57,7 +59,7 @@ class Controlador
     {
         $validador = new ValidarForm();
         $reglasValidacion = $this->crearReglasValidacion();
-        if(!isset($_POST['genero'])){
+        if (!isset($_POST['genero'])) {
             $_POST['genero'] = "";
         }
         $validador->validar($_POST, $reglasValidacion);
@@ -79,5 +81,35 @@ class Controlador
         }
         $this->mostrarFormulario("validar", $validador, null);
         exit();
+    }
+
+    private function registrar($validador)
+    {
+        $this->dao = new AnimalesDAO();
+        $animal = $this->crearAnimal($_POST);
+        $existe = $this->dao->existeAnimal($animal->getNumChip());
+        if (!$existe) {
+            $this->dao->insertarAnimal($animal);
+            $result = "Registro añadido!";
+            $this->mostrarFormulario("continuar", $validador, $result);
+            exit();
+        }
+        $result = "Numero Chip ya existe!";
+        $this->mostrarFormulario("continuar", $validador, $result);
+    }
+
+    private function crearAnimal($datos)
+    {
+        $numChip = htmlspecialchars(stripslashes($datos['numchip']));
+        $nombre = htmlspecialchars(stripslashes($datos['nombre']));
+        $edad = htmlspecialchars(stripslashes($datos['edad']));
+        $procedencia = htmlspecialchars(stripslashes($datos['procedencia']));
+        $genero = htmlspecialchars(stripslashes($datos['genero']));
+        $raza = htmlspecialchars(stripslashes($datos['raza']));
+        $foto = htmlspecialchars(stripslashes($datos['foto']));
+        $salud = htmlspecialchars(stripslashes($datos['salud']));
+        $descripcion = htmlspecialchars(stripslashes($datos['descripcion']));
+        $animal = new Animales($numChip, $nombre, $edad, $procedencia, $genero, $raza, $foto, $salud, $descripcion);
+        return $animal;
     }
 }

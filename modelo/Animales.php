@@ -10,16 +10,19 @@
         private $salud;
         private $descripcion;
         
-        function __construct($numChip, $nombre, $edad, $genero, $foto, $descripcion)
+        function __construct($numChip, $nombre, $edad, $procedencia, $genero, $raza, $foto, $salud, $descripcion)
         {
             $this->numChip = $numChip;
             $this->nombre = $nombre;
             $this->edad = $edad;
+            $this->procedencia = $procedencia;
             $this->genero = $genero;
+            $this->raza = $raza;
             $this->foto = $foto;
+            $this->salud = $salud;
             $this->descripcion = $descripcion;
         }
-        
+    
         function getNumChip()
         {
             return $this->numChip;
@@ -113,4 +116,3 @@
 
 
     }
-?>
