@@ -26,7 +26,7 @@ if (Input::siEnviado("post")) {
             <div class="form-group">
                 <label class="col-md-12 control-label" for="numchip">Nº Chip</label>
                 <div class="col-md-12">
-                    <input id="numchip" name="numchip" type="text" placeholder="00000000A" class="form-control input-md" value="<?php echo Input::get('numchip') ?>">
+                    <input id="numchip" name="numchip" type="text" placeholder="00000000A" class="form-control input-md" maxlength="9" value="<?php echo Input::get('numchip') ?>">
                     <span class="help-block">Introduzca el número del chip del animal</span>
                 </div>
             </div>
