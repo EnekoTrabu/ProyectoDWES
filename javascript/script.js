@@ -11,9 +11,7 @@ $(document).ready(function () {
 
         camposErrores.forEach(element => {
             //$("#" + element).css('border', '2px solid red');
-            $("#" + element).addClass("border border-danger");
-
-            
+            $("#" + element).addClass("border border-danger");      
         });
     }
 });
