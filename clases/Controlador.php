@@ -66,7 +66,7 @@ class Controlador
         // Si el formulario es correcto
         // Recoge los datos y vuelve a mostrar el formulario con el resultado en una tarjeta
         if ($validador->esValido()) {
-            $nombre = $_POST['nombre'];
+            /*$nombre = $_POST['nombre'];
             $edad =  $_POST['edad'];
             $procedencia = $_POST['procedencia'];
             $genero = $_POST['genero'];
@@ -76,7 +76,8 @@ class Controlador
             $descripcion = $_POST['descripcion'];
             $resultado = crearTarjeta($nombre, $edad, $procedencia, $genero, $raza, $foto, $salud, $descripcion);
 
-            $this->mostrarFormulario("continuar", $validador, $resultado);
+            $this->mostrarFormulario("continuar", $validador, $resultado);*/
+            $this->registrar($validador);
             exit();
         }
         $this->mostrarFormulario("validar", $validador, null);

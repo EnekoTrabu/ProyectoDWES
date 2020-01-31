@@ -10,7 +10,7 @@ class DataBase implements IDataBase
 
         try {
 
-            $datos = "mysql:host=localhost;dbname=ejemplo_pdo";
+            $datos = "mysql:host=localhost;dbname=adoptamedb";
             $this->conexion = new PDO($datos, 'alumno', 'alumno');
 
             return $this->conexion;
@@ -68,7 +68,7 @@ class DataBase implements IDataBase
 
     public function cantidadFilas($result)
     {
-        $filas = $result->num_rows();
+        $filas = count($result);
         return $filas;
     }
 }

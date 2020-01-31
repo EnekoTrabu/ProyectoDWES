@@ -11,7 +11,8 @@
             $this->db->conectar();
             $sql = "SELECT * FROM animales WHERE numChip = '$numchip'";
             $result = $this->db->ejecutarSQL($sql);
-            $numeroFilas = $this->db->cantidadFilas($result);
+            $rows = $result->fetchAll();
+            $numeroFilas = $this->db->cantidadFilas($rows);
             $this->db->desconectar();
             return $numeroFilas <> 0;
         }
