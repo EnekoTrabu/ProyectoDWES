@@ -91,11 +91,11 @@ class Controlador
         $existe = $this->dao->existeAnimal($animal->getNumChip());
         if (!$existe) {
             $this->dao->insertarAnimal($animal);
-            $result = "Registro añadido!";
+            $result = '<div class="alert alert-success" role="alert">Registro añadido!</div>';
             $this->mostrarFormulario("continuar", $validador, $result);
             exit();
         }
-        $result = "Numero Chip ya existe!";
+        $result = '<div class="alert alert-danger" role="alert">Numero Chip ya existe!</div>';
         $this->mostrarFormulario("continuar", $validador, $result);
     }
 

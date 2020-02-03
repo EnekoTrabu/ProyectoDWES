@@ -59,7 +59,7 @@
 											"font": "Arial;13;1",
 											"left": 293,
 											"top": 247,
-											"width": 363.79052734375,
+											"width": 438.93408203125,
 											"height": 13,
 											"text": "Animal"
 										},
@@ -90,7 +90,7 @@
 									"font": "Arial;13;0",
 									"left": 288,
 									"top": 240,
-									"width": 373.79052734375,
+									"width": 448.93408203125,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAFvrUgmCZVTlMM="
@@ -117,6 +117,23 @@
 									"subViews": [
 										{
 											"_type": "UMLAttributeView",
+											"_id": "AAAAAAFwCsZwqb+qtho=",
+											"_parent": {
+												"$ref": "AAAAAAFvrUgmCZVXrkU="
+											},
+											"model": {
+												"$ref": "AAAAAAFwCsZwgL+nPCc="
+											},
+											"font": "Arial;13;0",
+											"left": 293,
+											"top": 270,
+											"width": 438.93408203125,
+											"height": 13,
+											"text": "-NumChip",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
 											"_id": "AAAAAAFvrUnPjZWF6uc=",
 											"_parent": {
 												"$ref": "AAAAAAFvrUgmCZVXrkU="
@@ -126,8 +143,8 @@
 											},
 											"font": "Arial;13;0",
 											"left": 293,
-											"top": 270,
-											"width": 363.79052734375,
+											"top": 285,
+											"width": 438.93408203125,
 											"height": 13,
 											"text": "-Nombre",
 											"horizontalAlignment": 0
@@ -143,8 +160,8 @@
 											},
 											"font": "Arial;13;0",
 											"left": 293,
-											"top": 285,
-											"width": 363.79052734375,
+											"top": 300,
+											"width": 438.93408203125,
 											"height": 13,
 											"text": "-Edad",
 											"horizontalAlignment": 0
@@ -160,8 +177,8 @@
 											},
 											"font": "Arial;13;0",
 											"left": 293,
-											"top": 300,
-											"width": 363.79052734375,
+											"top": 315,
+											"width": 438.93408203125,
 											"height": 13,
 											"text": "-Procedencia",
 											"horizontalAlignment": 0
@@ -177,8 +194,8 @@
 											},
 											"font": "Arial;13;0",
 											"left": 293,
-											"top": 315,
-											"width": 363.79052734375,
+											"top": 330,
+											"width": 438.93408203125,
 											"height": 13,
 											"text": "-Genero",
 											"horizontalAlignment": 0
@@ -194,8 +211,8 @@
 											},
 											"font": "Arial;13;0",
 											"left": 293,
-											"top": 330,
-											"width": 363.79052734375,
+											"top": 345,
+											"width": 438.93408203125,
 											"height": 13,
 											"text": "-Raza",
 											"horizontalAlignment": 0
@@ -211,8 +228,8 @@
 											},
 											"font": "Arial;13;0",
 											"left": 293,
-											"top": 345,
-											"width": 363.79052734375,
+											"top": 360,
+											"width": 438.93408203125,
 											"height": 13,
 											"text": "-Foto",
 											"horizontalAlignment": 0
@@ -228,8 +245,8 @@
 											},
 											"font": "Arial;13;0",
 											"left": 293,
-											"top": 360,
-											"width": 363.79052734375,
+											"top": 375,
+											"width": 438.93408203125,
 											"height": 13,
 											"text": "-Salud",
 											"horizontalAlignment": 0
@@ -245,8 +262,8 @@
 											},
 											"font": "Arial;13;0",
 											"left": 293,
-											"top": 375,
-											"width": 363.79052734375,
+											"top": 390,
+											"width": 438.93408203125,
 											"height": 13,
 											"text": "-Descripcion",
 											"horizontalAlignment": 0
@@ -255,8 +272,8 @@
 									"font": "Arial;13;0",
 									"left": 288,
 									"top": 265,
-									"width": 373.79052734375,
-									"height": 128
+									"width": 448.93408203125,
+									"height": 143
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -279,10 +296,10 @@
 											},
 											"font": "Arial;13;0",
 											"left": 293,
-											"top": 398,
-											"width": 363.79052734375,
+											"top": 413,
+											"width": 438.93408203125,
 											"height": 13,
-											"text": "+Constructor(Nombre, Edad, Genero, Raza, Foto, Descripcion)",
+											"text": "+Constructor(NumChip, Nombre, Edad, Genero, Raza, Foto, Descripcion)",
 											"horizontalAlignment": 0
 										},
 										{
@@ -314,8 +331,8 @@
 											},
 											"font": "Arial;13;0",
 											"left": 293,
-											"top": 413,
-											"width": 363.79052734375,
+											"top": 428,
+											"width": 438.93408203125,
 											"height": 13,
 											"text": "+Getters()",
 											"horizontalAlignment": 0
@@ -331,8 +348,8 @@
 											},
 											"font": "Arial;13;0",
 											"left": 293,
-											"top": 428,
-											"width": 363.79052734375,
+											"top": 443,
+											"width": 438.93408203125,
 											"height": 13,
 											"text": "+Setters()",
 											"horizontalAlignment": 0
@@ -348,8 +365,8 @@
 											},
 											"font": "Arial;13;0",
 											"left": 293,
-											"top": 443,
-											"width": 363.79052734375,
+											"top": 458,
+											"width": 438.93408203125,
 											"height": 13,
 											"text": "+toString()",
 											"horizontalAlignment": 0
@@ -357,8 +374,8 @@
 									],
 									"font": "Arial;13;0",
 									"left": 288,
-									"top": 393,
-									"width": 373.79052734375,
+									"top": 408,
+									"width": 448.93408203125,
 									"height": 68
 								},
 								{
@@ -394,8 +411,8 @@
 							"containerChangeable": true,
 							"left": 288,
 							"top": 240,
-							"width": 373.79052734375,
-							"height": 221,
+							"width": 448.93408203125,
+							"height": 236,
 							"nameCompartment": {
 								"$ref": "AAAAAAFvrUgmCZVS1Uo="
 							},
@@ -424,12 +441,22 @@
 					"attributes": [
 						{
 							"_type": "UMLAttribute",
+							"_id": "AAAAAAFwCsZwgL+nPCc=",
+							"_parent": {
+								"$ref": "AAAAAAFvrUgmCJVPbYo="
+							},
+							"name": "NumChip",
+							"visibility": "private"
+						},
+						{
+							"_type": "UMLAttribute",
 							"_id": "AAAAAAFvrUnPYpWCQA0=",
 							"_parent": {
 								"$ref": "AAAAAAFvrUgmCJVPbYo="
 							},
 							"name": "Nombre",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -438,7 +465,8 @@
 								"$ref": "AAAAAAFvrUgmCJVPbYo="
 							},
 							"name": "Edad",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -447,7 +475,8 @@
 								"$ref": "AAAAAAFvrUgmCJVPbYo="
 							},
 							"name": "Procedencia",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -456,7 +485,8 @@
 								"$ref": "AAAAAAFvrUgmCJVPbYo="
 							},
 							"name": "Genero",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -465,7 +495,8 @@
 								"$ref": "AAAAAAFvrUgmCJVPbYo="
 							},
 							"name": "Raza",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -474,7 +505,8 @@
 								"$ref": "AAAAAAFvrUgmCJVPbYo="
 							},
 							"name": "Foto",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -483,7 +515,8 @@
 								"$ref": "AAAAAAFvrUgmCJVPbYo="
 							},
 							"name": "Salud",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -492,7 +525,8 @@
 								"$ref": "AAAAAAFvrUgmCJVPbYo="
 							},
 							"name": "Descripcion",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -504,6 +538,14 @@
 							},
 							"name": "Constructor",
 							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFwCsltrr+3xrM=",
+									"_parent": {
+										"$ref": "AAAAAAFvrUm1ipV8nQI="
+									},
+									"name": "NumChip"
+								},
 								{
 									"_type": "UMLParameter",
 									"_id": "AAAAAAFvrU7n8JXl7xo=",

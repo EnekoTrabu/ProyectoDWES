@@ -141,10 +141,8 @@ if (Input::siEnviado("post")) {
 <br>
 
 <?php
-echo "<div class='resultado'>";
 if (isset($resultado)) {
     echo $resultado;
 }
-echo "</div>";
 include 'includes/pie.php';
 ?>
