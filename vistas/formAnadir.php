@@ -24,7 +24,6 @@ if (Input::siEnviado("post")) {
 
             <!-- Form Name -->
             <legend>Añadir Nuevo Animal</legend>
-
             <!-- Text input-->
             <div class="form-group">
                 <label class="col-md-12 control-label" for="numchip">Nº Chip</label>

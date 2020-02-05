@@ -39,15 +39,15 @@
             </ul>
 
             <ul class="navbar-nav ml-md-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Cambiar Idioma
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="idioma">
-                        <a class="dropdown-item" href="#">Castellano</a>
-                        <a class="dropdown-item" href="#">Euskera</a>
+                <form method="get" class="form-inline">
+                    <div class="form-group mx-sm-3 mb-2">
+                        <select id="idioma" name="idioma" class="form-control">
+                            <option value="cast">Castellano</option>
+                            <option value="eusk">Euskera</option>
+                        </select>
                     </div>
-                </li>
+                    <button id="enviar" name="enviar" value="validar" class="btn btn-success mb-2">Enviar</button>
+                </form>
             </ul>
         </div>
     </nav>

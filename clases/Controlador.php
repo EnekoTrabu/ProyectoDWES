@@ -7,9 +7,19 @@ class Controlador
 
     public function run()
     {
+        session_start();
         // TODO Listar animales
         include 'funciones/funciones.php';
         include 'includes/cabecera.php';
+
+        if(isset($_GET["idioma"])){
+            $lang = $_GET["idioma"];
+            if(!empty($lang)){
+                $_SESSION["idioma"] = $lang;
+            }
+        }
+
+        echo $_SESSION["idioma"];
 
         // Si no se ha enviado el formulario
         // Se llama al método para mostrar el formulario inicial
