@@ -16,7 +16,7 @@ if (Input::siEnviado("post")) {
 }
 ?>
 <div class="row row-cols-1">
-    <form class="form-horizontal formulario" action="" method="POST">
+    <form class="form-horizontal formulario" action="" method="POST" enctype="multipart/form-data">
         <fieldset>
 
             <!-- Form Name -->

@@ -43,4 +43,12 @@ class AnimalesDAO
 
         $this->db->desconectar();
     }
+
+    function seleccionarTodosAnimales(){
+        $this->db->conectar();
+        $sql = "SELECT * FROM animales";
+        $result = $this->db->ejecutarSQL($sql);
+        $result = $result->fetchAll();
+        return $result;
+    }
 }

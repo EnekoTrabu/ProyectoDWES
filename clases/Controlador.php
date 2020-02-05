@@ -14,6 +14,11 @@ class Controlador
         // Si no se ha enviado el formulario
         // Se llama al método para mostrar el formulario inicial
         if (!isset($_POST['enviar'])) {
+            
+            if(isset($_GET['animales'])){
+                $this->mostrar();
+                exit();
+            }
             $this->mostrarFormulario("validar", null, null);
             exit();
         }
@@ -29,6 +34,10 @@ class Controlador
     private function mostrarFormulario($fase, $validador, $resultado)
     {
         include 'vistas/formAnadir.php';
+    }
+
+    private function mostrarTarjetas($resultado){
+        include 'vistas/verAnimales.php';
     }
 
     /**
@@ -87,7 +96,7 @@ class Controlador
     private function registrar($validador)
     {
         $this->dao = new AnimalesDAO();
-        $animal = $this->crearAnimal($_POST);
+        $animal = $this->crearAnimal($_POST, $_FILES);
         $existe = $this->dao->existeAnimal($animal->getNumChip());
         if (!$existe) {
             $this->dao->insertarAnimal($animal);
@@ -99,7 +108,14 @@ class Controlador
         $this->mostrarFormulario("continuar", $validador, $result);
     }
 
-    private function crearAnimal($datos)
+    private function mostrar(){
+        $this->dao = new AnimalesDAO();
+        $animales = $this->dao->seleccionarTodosAnimales();
+        $this->mostrarTarjetas($animales);
+        
+    }
+
+    private function crearAnimal($datos, $foto)
     {
         $numChip = htmlspecialchars(stripslashes($datos['numchip']));
         $nombre = htmlspecialchars(stripslashes($datos['nombre']));
@@ -107,7 +123,7 @@ class Controlador
         $procedencia = htmlspecialchars(stripslashes($datos['procedencia']));
         $genero = htmlspecialchars(stripslashes($datos['genero']));
         $raza = htmlspecialchars(stripslashes($datos['raza']));
-        $foto = htmlspecialchars(stripslashes($datos['foto']));
+        $foto = base64_encode(file_get_contents($foto['foto']['tmp_name']));;
         $salud = htmlspecialchars(stripslashes($datos['salud']));
         $descripcion = htmlspecialchars(stripslashes($datos['descripcion']));
         $animal = new Animales($numChip, $nombre, $edad, $procedencia, $genero, $raza, $foto, $salud, $descripcion);
