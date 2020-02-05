@@ -35,6 +35,19 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="index.php?animales=true">Ver Animales <span class="sr-only"></span></a>
                 </li>
+                
+            </ul>
+
+            <ul class="navbar-nav ml-md-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Cambiar Idioma
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="idioma">
+                        <a class="dropdown-item" href="#">Castellano</a>
+                        <a class="dropdown-item" href="#">Euskera</a>
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>

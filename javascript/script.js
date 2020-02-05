@@ -14,4 +14,14 @@ $(document).ready(function () {
             $("#" + element).addClass("border border-danger");
         });
     }
+
+    $('#idioma').children().on('click', function(){
+        var actual = self.location.href;
+        if(actual.includes("?animales=true")){
+            location = "index.php?animales=true&idioma="+ $(this).html();
+        }else{
+            location = "index.php?idioma="+ $(this).html();
+        }
+        //location = self.location.href + '?idioma=' + $(this).html();
+    });
 });

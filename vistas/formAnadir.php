@@ -1,5 +1,8 @@
 <br>
 <?php
+/*if(!isset($_GET['idioma'])){
+    setcookie('idioma', 'Castellano', time() + 365 * 24 * 3600);
+}*/
 if (Input::siEnviado("post")) {
     $errores = $validador->getErrores();
 
