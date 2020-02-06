@@ -30,23 +30,23 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.php">Inicio <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.php"><?php echo $idioma['inicio'] ?> <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.php?animales=true">Ver Animales <span class="sr-only"></span></a>
+                    <a class="nav-link" href="index.php?animales=true"><?php echo $idioma['animales'] ?> <span class="sr-only"></span></a>
                 </li>
                 
             </ul>
 
             <ul class="navbar-nav ml-md-auto">
-                <form method="get" class="form-inline">
+                <form method="POST" class="form-inline">
                     <div class="form-group mx-sm-3 mb-2">
                         <select id="idioma" name="idioma" class="form-control">
-                            <option value="cast">Castellano</option>
-                            <option value="eusk">Euskera</option>
+                            <option value="cast"><?php echo $idioma['idioma1'] ?></option>
+                            <option value="eusk"><?php echo $idioma['idioma2'] ?></option>
                         </select>
                     </div>
-                    <button id="enviar" name="enviar" value="validar" class="btn btn-success mb-2">Enviar</button>
+                    <button id="enviar" name="enviar" value="validar" class="btn btn-success mb-2"><?php echo $idioma['cambiar'] ?></button>
                 </form>
             </ul>
         </div>

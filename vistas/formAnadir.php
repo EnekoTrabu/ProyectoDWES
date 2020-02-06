@@ -1,8 +1,12 @@
 <br>
 <?php
-/*if(!isset($_GET['idioma'])){
-    setcookie('idioma', 'Castellano', time() + 365 * 24 * 3600);
-}*/
+if(isset($_SESSION['idioma'])){
+    $lang = $_SESSION["idioma"];
+    include "idiomas/".$lang.".php";
+}else{
+    include "idiomas/cast.php";
+}
+
 if (Input::siEnviado("post")) {
     $errores = $validador->getErrores();
 
@@ -23,57 +27,57 @@ if (Input::siEnviado("post")) {
         <fieldset>
 
             <!-- Form Name -->
-            <legend>Añadir Nuevo Animal</legend>
+            <legend><?php echo $idioma['tituloForm'] ?></legend>
             <!-- Text input-->
             <div class="form-group">
-                <label class="col-md-12 control-label" for="numchip">Nº Chip</label>
+                <label class="col-md-12 control-label" for="numchip"><?php echo $idioma['campoChip'] ?></label>
                 <div class="col-md-12">
                     <input id="numchip" name="numchip" type="text" placeholder="00000000A" class="form-control input-md" maxlength="9" value="<?php echo Input::get('numchip') ?>">
-                    <span class="help-block">Introduzca el número del chip del animal</span>
+                    <span class="help-block"><?php echo $idioma['descChip'] ?></span>
                 </div>
             </div>
 
             <!-- Text input-->
             <div class="form-group">
-                <label class="col-md-12 control-label" for="nombre">Nombre</label>
+                <label class="col-md-12 control-label" for="nombre"><?php echo $idioma['campoNombre'] ?></label>
                 <div class="col-md-12">
-                    <input id="nombre" name="nombre" type="text" placeholder="Nombre" class="form-control input-md" value="<?php echo Input::get('nombre') ?>">
-                    <span class="help-block">Introduzca el nombre del animal</span>
+                    <input id="nombre" name="nombre" type="text" placeholder="<?php echo $idioma['campoNombre'] ?>" class="form-control input-md" value="<?php echo Input::get('nombre') ?>">
+                    <span class="help-block"><?php echo $idioma['descNombre'] ?></span>
                 </div>
             </div>
 
             <!-- Text input-->
             <div class="form-group">
-                <label class="col-md-12 control-label" for="edad">Edad</label>
+                <label class="col-md-12 control-label" for="edad"><?php echo $idioma['campoEdad'] ?></label>
                 <div class="col-md-12">
-                    <input id="edad" name="edad" type="text" placeholder="Edad" class="form-control input-md" value="<?php echo Input::get('edad') ?>">
-                    <span class="help-block">Introduzca la edad del animal</span>
+                    <input id="edad" name="edad" type="text" placeholder="<?php echo $idioma['campoEdad'] ?>" class="form-control input-md" value="<?php echo Input::get('edad') ?>">
+                    <span class="help-block"><?php echo $idioma['descEdad'] ?></span>
                 </div>
             </div>
 
             <!-- Text input-->
             <div class="form-group">
-                <label class="col-md-12 control-label" for="procedencia">Procedencia</label>
+                <label class="col-md-12 control-label" for="procedencia"><?php echo $idioma['campoProcedencia'] ?></label>
                 <div class="col-md-12">
-                    <input id="procedencia" name="procedencia" type="text" placeholder="Procedencia" class="form-control input-md" value="<?php echo Input::get('procedencia') ?>">
-                    <span class="help-block">Introduzca la procedencia del animal</span>
+                    <input id="procedencia" name="procedencia" type="text" placeholder="<?php echo $idioma['campoProcedencia'] ?>" class="form-control input-md" value="<?php echo Input::get('procedencia') ?>">
+                    <span class="help-block"><?php echo $idioma['descProcedencia'] ?></span>
                 </div>
             </div>
 
             <!-- Multiple Radios -->
             <div class="form-group">
-                <label class="col-md-12 control-label" for="genero">Género</label>
+                <label class="col-md-12 control-label" for="genero"><?php echo $idioma['campoGenero'] ?></label>
                 <div class="col-md-12" id="genero">
                     <div class="radio">
                         <label for="genero-0">
-                            <input type="radio" name="genero" id="genero-0" value="Macho" <?php Utilidades::verificarBotones(Input::get('genero'), "Macho") ?>>
-                            Macho
+                            <input type="radio" name="genero" id="genero-0" value="<?php echo $idioma['genero1'] ?>" <?php Utilidades::verificarBotones(Input::get('genero'), $idioma['genero1'] ) ?>>
+                            <?php echo $idioma['genero1'] ?>
                         </label>
                     </div>
                     <div class="radio">
                         <label for="genero-1">
-                            <input type="radio" name="genero" id="genero-1" value="Hembra" <?php Utilidades::verificarBotones(Input::get('genero'), "Hembra") ?>>
-                            Hembra
+                            <input type="radio" name="genero" id="genero-1" value="<?php echo $idioma['genero2'] ?>" <?php Utilidades::verificarBotones(Input::get('genero'), $idioma['genero2'] ) ?>>
+                            <?php echo $idioma['genero2'] ?>
                         </label>
                     </div>
                 </div>
@@ -81,16 +85,16 @@ if (Input::siEnviado("post")) {
 
             <!-- Text input-->
             <div class="form-group">
-                <label class="col-md-12 control-label" for="raza">Raza</label>
+                <label class="col-md-12 control-label" for="raza"><?php echo $idioma['campoRaza'] ?></label>
                 <div class="col-md-12">
-                    <input id="raza" name="raza" type="text" placeholder="Raza" class="form-control input-md" value="<?php echo Input::get('raza') ?>">
-                    <span class="help-block">Introduzca la raza del animal</span>
+                    <input id="raza" name="raza" type="text" placeholder="<?php echo $idioma['campoRaza'] ?>" class="form-control input-md" value="<?php echo Input::get('raza') ?>">
+                    <span class="help-block"><?php echo $idioma['descRaza'] ?></span>
                 </div>
             </div>
 
             <!-- File Button -->
             <div class="form-group">
-                <label class="col-md-12 control-label" for="foto">Foto</label>
+                <label class="col-md-12 control-label" for="foto"><?php echo $idioma['campoFoto'] ?></label>
                 <div class="col-md-12">
                     <input id="foto" name="foto" class="input-file" type="file">
                 </div>
@@ -98,11 +102,11 @@ if (Input::siEnviado("post")) {
 
             <!-- Select Basic -->
             <div class="form-group">
-                <label class="col-md-12 control-label" for="salud">Salud</label>
+                <label class="col-md-12 control-label" for="salud"><?php echo $idioma['campoSalud'] ?></label>
                 <div class="col-md-12">
                     <select id="salud" name="salud" class="form-control">
                         <?php
-                        $valores = ["Buena Salud", "Mala Salud"];
+                        $valores = [$idioma['salud1'], $idioma['salud2']];
                         foreach ($valores as $val) {
                             echo "<option value='$val'";
                             echo Utilidades::verificarLista(Input::get('salud'), $val);
@@ -116,9 +120,9 @@ if (Input::siEnviado("post")) {
 
             <!-- Textarea -->
             <div class="form-group">
-                <label class="col-md-12 control-label" for="descripcion">Descripción</label>
+                <label class="col-md-12 control-label" for="descripcion"><?php echo $idioma['campoDescripcion'] ?></label>
                 <div class="col-md-12">
-                    <textarea class="form-control" id="descripcion" name="descripcion" placeholder="Introduzca una pequeña descripción del animal"><?php echo Input::get('descripcion') ?></textarea>
+                    <textarea class="form-control" id="descripcion" name="descripcion" placeholder="<?php echo $idioma['descDescripcion'] ?>"><?php echo Input::get('descripcion') ?></textarea>
                 </div>
             </div>
 
@@ -133,7 +137,7 @@ if (Input::siEnviado("post")) {
             <div class="form-group">
                 <label class="col-md-12 control-label" for="enviar"></label>
                 <div class="col-md-12">
-                    <button id="enviar" name="enviar" value="validar" class="btn btn-outline-dark btn-lg btn-block">Enviar</button>
+                    <button id="enviar" name="enviar" value="validar" class="btn btn-outline-dark btn-lg btn-block"><?php echo $idioma['campoEnviar'] ?></button>
                 </div>
             </div>
 

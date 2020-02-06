@@ -69,3 +69,14 @@ function decodeImage($imagen){
     
     return base64_encode($data);
 }
+
+function cambiarIdioma($idioma){
+    if(isset($idioma)){
+        // si es true, se crea el require y la variable lang
+        $lang = $idioma;
+        include "idiomas/".$lang.".php";
+        // si no hay sesion por default se carga el lenguaje espanol
+    }else{
+        include "idiomas/cast.php";
+    }
+}

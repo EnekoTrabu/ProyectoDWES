@@ -9,17 +9,24 @@ class Controlador
     {
         session_start();
         // TODO Listar animales
-        include 'funciones/funciones.php';
-        include 'includes/cabecera.php';
-
-        if(isset($_GET["idioma"])){
-            $lang = $_GET["idioma"];
+        if(isset($_POST["idioma"])){
+            $lang = $_POST["idioma"];
             if(!empty($lang)){
                 $_SESSION["idioma"] = $lang;
             }
         }
 
-        echo $_SESSION["idioma"];
+        if(isset($_SESSION['idioma'])){
+            $lang = $_SESSION["idioma"];
+            include "idiomas/".$lang.".php";
+        }else{
+            include "idiomas/cast.php";
+        }
+
+        include 'funciones/funciones.php';
+        include 'includes/cabecera.php';
+
+        
 
         // Si no se ha enviado el formulario
         // Se llama al método para mostrar el formulario inicial
