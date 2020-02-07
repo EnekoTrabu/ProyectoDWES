@@ -16,23 +16,49 @@
  * 
  * @return $tarjeta Código HTML
  */
-function crearTarjeta($nombre, $edad, $procedencia, $genero, $raza, $foto, $salud, $descripcion)
+function crearTarjeta($idioma, $nombre, $edad, $procedencia, $genero, $raza, $foto, $salud, $descripcion)
 {
+    if($idioma == "eusk"){
+        if($genero == "Macho"){
+            $genero = "Ar";
+        }else{
+            $genero = "Eme";
+        }
+
+        if($salud == "Buena Salud"){
+            $salud = "Osasun Egokia";
+        }else{
+            $salud = "Osasun Txarra";
+        }
+
+        $valoresIdioma = [
+            "edad" => "urte",
+            "procedencia" => "Jatorria",
+            "noProcedencia" => "Zehaztu gabe"
+        ];
+    }else{
+        $valoresIdioma = [
+            "edad" => "edad",
+            "procedencia" => "Procedencia",
+            "noProcedencia" => "Sin procedencia"
+        ];
+    }
+    
     $tarjeta = "";
 
     $tarjeta .= '<div class="card col-md-6 bg-light border border-dark mt-3 mb-3">';
     $tarjeta .= '<br>';
     $tarjeta .= '<div class="card-header border-top border-secondary">';
     $tarjeta .= '<h5 class="card-title">' . $nombre . '</h5>';
-    $tarjeta .= '<h6 class="card-subtitle mb-2 text-muted">' . $edad . ' años</h6>';
+    $tarjeta .= '<h6 class="card-subtitle mb-2 text-muted">' . $edad . ' ' . $valoresIdioma['edad'].' </h6>';
     $tarjeta .= '</div>';
     $tarjeta .= '<div class="card-body">';
     $tarjeta .= '<img src="data:image/jpg;base64,'. $foto . '" class="img-fluid" alt="">';
     $tarjeta .= '<br><br>';
     if ($procedencia == "") {
-        $tarjeta .= '<h6 class="card-subtitle mb-2 text-muted">Procedencia: <em>Sin especificar</em></h6>';
+        $tarjeta .= '<h6 class="card-subtitle mb-2 text-muted">' . $valoresIdioma['procedencia'].': <em>' . $valoresIdioma['noProcedencia'].'</em></h6>';
     } else {
-        $tarjeta .= '<h6 class="card-subtitle mb-2 text-muted">Procedencia: <em>' . $procedencia . '</em></h6>';
+        $tarjeta .= '<h6 class="card-subtitle mb-2 text-muted">' . $valoresIdioma['procedencia'].': <em>' . $procedencia . '</em></h6>';
     }
 
     if ($raza == "") {

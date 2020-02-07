@@ -8,7 +8,7 @@ $idioma = [
     'cambiar' => 'Aldatu',
     //Formulario añadir
     'tituloForm' => 'Animali Berria Gehitu',
-    'campoChip' => 'Txip Zenbakia',
+    'campoChip' => 'TxipZenbakia',
     'descChip' => 'Animaliaren txip zenbakia sartu',
     'campoNombre' => 'Izena',
     'descNombre' => 'Animaliaren izena sartu',
@@ -27,7 +27,9 @@ $idioma = [
     'salud2' => 'Osasun Txarra',
     'campoDescripcion' => 'Deskribapena',
     'descDescripcion' => 'Deskribapen laburra barneratu',
-    'campoEnviar' => 'Bidali'
-];
+    'campoEnviar' => 'Bidali',
 
-?>
+    // Footer
+    'proyecto' => "DWESeko Proiektua | Txakur eta Katuen adopzioa",
+    'realizado' => "Egileak: Iranzu Aguirre, Eneko Trabudua eta Itziar Roldán."
+];

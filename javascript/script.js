@@ -14,22 +14,4 @@ $(document).ready(function () {
             $("#" + element).addClass("border border-danger");
         });
     }
-
-    $('#idioma').children().on('click', function(){
-        var actual = self.location.href;
-        if(actual.includes("?animales=true")){
-            window.location.href = "index.php?animales=true&idioma="+ $(this).html();
-        }else{
-            window.location.href = "index.php?idioma="+ $(this).html();
-        }
-
-
-        //window.location.reload();
-        //location = self.location.href + '?idioma=' + $(this).html();
-    });
-
-    function recargar() {
-        alert('Me voy a recargar');
-        window.location.reload();
-    }
 });

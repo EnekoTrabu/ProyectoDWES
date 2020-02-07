@@ -39,7 +39,7 @@
             </ul>
 
             <ul class="navbar-nav ml-md-auto">
-                <form method="POST" class="form-inline">
+                <form method="get" class="form-inline">
                     <div class="form-group mx-sm-3 mb-2">
                         <select id="idioma" name="idioma" class="form-control">
                             <option value="cast"><?php echo $idioma['idioma1'] ?></option>

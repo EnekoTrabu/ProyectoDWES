@@ -19,46 +19,92 @@ class ValidarForm
      * @param $fuente Array con los valores del formulario
      * @param $reglasValidacion Array con las reglas de validación
      */
-    public function validar($fuente, $reglasValidacion)
+    public function validar($fuente, $reglasValidacion, $idioma)
     {
         foreach ($fuente as $campo => $valor) {
             foreach ($reglasValidacion as $nombreCampo => $reglasCampo) {
                 if ($campo === $nombreCampo) {
+                    if ($idioma == "eusk") {
+                        switch ($nombreCampo) {
+                            case 'numchip':
+                                $nombreCampo = "TxipZenbakia";
+                                break;
+                            case 'nombre':
+                                $nombreCampo = "Izena";
+                                break;
+                            case 'edad':
+                                $nombreCampo = "Adina";
+                                break;
+                            case 'descripcion':
+                                $nombreCampo = "Deskribapena";
+                                break;
+                            case 'genero':
+                                $nombreCampo = "Generoa";
+                                break;
+                            case 'foto':
+                                $nombreCampo = "Argazkia";
+                                break;
+                        }
+                    }
                     foreach ($reglasCampo as $nombreRegla => $valorRegla) {
                         if ($nombreRegla === "required" && $valorRegla) {
                             if (empty($valor)) {
-                                $this->addError($nombreCampo, "El campo es obligatorio.");
+                                if ($idioma == "eusk") {
+                                    $this->addError($nombreCampo, "Datua derrigorrezkoa da.");
+                                } else {
+                                    $this->addError($nombreCampo, "El campo es obligatorio.");
+                                }
                             }
                         }
 
                         if ($nombreRegla === 'onlynumber' && $valorRegla) {
                             if (!is_numeric($valor)) {
-                                $this->addError($nombreCampo, "Debes introducir un número.");
+                                if ($idioma == "eusk") {
+                                    $this->addError($nombreCampo, "Zenbakia sartu behar duzu.");
+                                } else {
+                                    $this->addError($nombreCampo, "Debes introducir un número.");
+                                }
                             }
                         }
 
                         if ($nombreRegla === 'min') {
                             if ($valor < $valorRegla) {
-                                $this->addError($nombreCampo, "El valor mínimo es 0 años.");
+                                if ($idioma == "eusk") {
+                                    $this->addError($nombreCampo, "Gutxieneko balorea 0 urteko da.");
+                                } else {
+                                    $this->addError($nombreCampo, "El valor mínimo es 0 años.");
+                                }
                             }
                         }
 
                         if ($nombreRegla === 'checked' && $valorRegla) {
                             if (empty($valor)) {
-                                $this->addError($nombreCampo, "No se ha seleccionado un valor.");
+                                if ($idioma == "eusk") {
+                                    $this->addError($nombreCampo, "Balorea ez dago aukeratuta.");
+                                } else {
+                                    $this->addError($nombreCampo, "No se ha seleccionado un valor.");
+                                }
                             }
                         }
 
                         if ($nombreRegla === 'selected' && $valorRegla) {
                             if (empty($valor)) {
-                                $this->addError($nombreCampo, "No se ha seleccionado un valor.");
+                                if ($idioma == "eusk") {
+                                    $this->addError($nombreCampo, "Balorea ez dago aukeratuta.");
+                                } else {
+                                    $this->addError($nombreCampo, "No se ha seleccionado un valor.");
+                                }
                             }
                         }
 
                         if ($nombreRegla === 'formato' && $valorRegla) {
                             $patron = "/[0-9]{8}[a-zA-Z]/";
                             if (!preg_match($patron, $valor)) {
-                                $this->addError($nombreCampo, "El formato del chip es erroneo");
+                                if ($idioma == "eusk") {
+                                    $this->addError($nombreCampo, "Txiparen formatua oker dago.");
+                                } else {
+                                    $this->addError($nombreCampo, "El formato del chip es erroneo");
+                                }
                             }
                         }
                     }

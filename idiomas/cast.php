@@ -28,7 +28,11 @@ $idioma = [
     'salud2' => 'Mala Salud',
     'campoDescripcion' => 'Descripción',
     'descDescripcion' => 'Introduzca una pequeña descripción del animal',
-    'campoEnviar' => 'Enviar'
+    'campoEnviar' => 'Enviar',
+
+    // Footer
+    'proyecto' => "Proyecto DWES | Adopción Canina y Felina",
+    'realizado' => "Realizado por: Helecho Aguirre, Iñigo Trabudua y Acantilado Roldán."
 ];
 
 ?>
