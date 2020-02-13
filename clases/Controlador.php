@@ -7,9 +7,26 @@ class Controlador
 
     public function run()
     {
+        session_start();
         // TODO Listar animales
+        if(isset($_GET["idioma"])){
+            $lang = $_GET["idioma"];
+            if(!empty($lang)){
+                $_SESSION["idioma"] = $lang;
+            }
+        }
+
+        if(isset($_SESSION['idioma'])){
+            $lang = $_SESSION["idioma"];
+            include "idiomas/".$lang.".php";
+        }else{
+            include "idiomas/cast.php";
+        }
+
         include 'funciones/funciones.php';
         include 'includes/cabecera.php';
+
+        
 
         // Si no se ha enviado el formulario
         // Se llama al método para mostrar el formulario inicial
@@ -71,7 +88,10 @@ class Controlador
         if (!isset($_POST['genero'])) {
             $_POST['genero'] = "";
         }
-        $validador->validar($_POST, $reglasValidacion);
+        /*if (!isset($_POST['foto'])) {
+            $_POST['foto'] = "";
+        }*/
+        $validador->validar($_POST, $reglasValidacion, $_SESSION["idioma"]);
         // Si el formulario es correcto
         // Recoge los datos y vuelve a mostrar el formulario con el resultado en una tarjeta
         if ($validador->esValido()) {
@@ -100,11 +120,21 @@ class Controlador
         $existe = $this->dao->existeAnimal($animal->getNumChip());
         if (!$existe) {
             $this->dao->insertarAnimal($animal);
-            $result = '<div class="alert alert-success" role="alert">Registro añadido!</div>';
+            if($_SESSION["idioma"] == "eusk"){
+                $result = '<div class="alert alert-success" role="alert">Erregistroa gehituta!</div>';
+            }else{
+                $result = '<div class="alert alert-success" role="alert">Registro añadido!</div>';
+            }
+            
             $this->mostrarFormulario("continuar", $validador, $result);
             exit();
         }
-        $result = '<div class="alert alert-danger" role="alert">Numero Chip ya existe!</div>';
+
+        if($_SESSION["idioma"] == "eusk"){
+            $result = '<div class="alert alert-danger" role="alert">Txip Zenbakia hartuta dago!</div>';
+        }else{
+            $result = '<div class="alert alert-danger" role="alert">Numero Chip ya existe!</div>';
+        }
         $this->mostrarFormulario("continuar", $validador, $result);
     }
 

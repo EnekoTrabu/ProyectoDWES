@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Adóptame</title>
@@ -30,11 +30,37 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.php">Inicio <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.php"><?php echo $idioma['inicio'] ?> <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.php?animales=true">Ver Animales <span class="sr-only"></span></a>
+                    <a class="nav-link" href="index.php?animales=true"><?php echo $idioma['animales'] ?> <span class="sr-only"></span></a>
                 </li>
+                
+            </ul>
+
+            <ul class="navbar-nav">
+                <form class="form-inline" method="post">
+                    <div class="form-group mb-2">
+                        <label for="email" class="sr-only">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                    </div>
+                    <div class="form-group mx-sm-3 mb-2">
+                        <label for="inputPassword2" class="sr-only">Password</label>
+                        <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-danger mb-2">Entrar</button>
+                </form>
+            </ul>
+            <ul class="navbar-nav ml-md-auto">
+                <form method="get" class="form-inline">
+                    <div class="form-group mx-sm-3 mb-2">
+                        <select id="idioma" name="idioma" class="form-control">
+                            <option value="cast"><?php echo $idioma['idioma1'] ?></option>
+                            <option value="eusk"><?php echo $idioma['idioma2'] ?></option>
+                        </select>
+                    </div>
+                    <button id="enviar" name="enviar" value="validar" class="btn btn-danger mb-2"><?php echo $idioma['cambiar'] ?></button>
+                </form>
             </ul>
         </div>
     </nav>

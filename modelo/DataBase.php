@@ -22,7 +22,7 @@ class DataBase implements IDataBase
         try {
 
             $datos = "mysql:host=localhost;dbname=adoptamedb";
-            $this->conexion = new PDO($datos, 'alumno', 'alumno');
+            $this->conexion = new PDO($datos, 'root', '');
 
             return $this->conexion;
         } catch (PDOException $error) {
