@@ -5,6 +5,17 @@ class DataBase implements IDataBase
     private $conexion;
 
 
+    /**
+     * conectar.
+     *
+     * @author	Eneko Trabudua <etrabudua5@gmail.com>
+     * @since	v0.0.1
+     * 
+     * Conecta a nuestra BBDD
+     * 
+     * @version	v1.0.0	Thursday, February 13th, 2020.
+     * @access	public
+     */
     public function conectar()
     {
 
@@ -20,11 +31,37 @@ class DataBase implements IDataBase
         }
     }
 
+    /**
+     * desconectar.
+     *
+     * @author	Eneko Trabudua <etrabudua5@gmail.com>
+     * @since	v0.0.1
+     * 
+     * Destruye el objeto PDO.
+     * 
+     * @version	v1.0.0	Thursday, February 13th, 2020.
+     * @access	public
+     * @return	void
+     */
     public function desconectar()
     {
         $this->conexion = null;
     }
 
+
+    /**
+     * ejecutarSQL.
+     *
+     * @author	Eneko Trabudua <etrabudua5@gmail.com>
+     * @since	v0.0.1
+     * 
+     * Ejecuta la consulta select que mandan por parámetro,
+     * si no la puede ejecutar devulve el error
+     * 
+     * @version	v1.0.0	Thursday, February 13th, 2020.
+     * @access	public
+     * @param	mixed	$sql	
+     */
     public function ejecutarSQL($sql)
     {
         /*//los select
@@ -48,6 +85,20 @@ class DataBase implements IDataBase
         }
     }
 
+    /**
+     * ejecutarSQLactualizacion.
+     *
+     * @author	Eneko Trabudua <etrabudua5@gmail.com>
+     * @since	v0.0.1
+     * @version	v1.0.0	Thursday, February 13th, 2020.
+     * 
+     * Ejecuta la consulta update que mandan por parámetro,
+     * si no la puede ejecutar devulve el error
+     * 
+     * @access	public
+     * @param	mixed	$sql 	
+     * @param	mixed	$args	
+     */
     public function ejecutarSQLactualizacion($sql, $args)
     {
         /*//insert, delete, update
@@ -66,6 +117,16 @@ class DataBase implements IDataBase
         }
     }
 
+    /**
+     * cantidadFilas.
+     *
+     * @author	Eneko Trabudua <etrabudua5@gmail.com>
+     * @since	v0.0.1
+     * @version	v1.0.0	Thursday, February 13th, 2020.
+     * @access	public
+     * @param	mixed	$result	
+     * @return	mixed Devulve la cantidad de filas
+     */
     public function cantidadFilas($result)
     {
         $filas = count($result);

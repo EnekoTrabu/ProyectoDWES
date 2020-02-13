@@ -8,6 +8,22 @@ class AnimalesDAO
         $this->db = new DataBase();
     }
 
+    /**
+     * existeAnimal.
+     *
+     * @author	Eneko Trabudua <etrabudua5@gmail.com>
+     * @since	v0.0.1
+     * 
+     * Conectamos a la BBDD, hacemos la consulta del animal con el numChip 
+     * que está intentado introducir el usuario
+     * 
+     * Comprobamos que el resultado de la consulta tenga alguna fila
+     * Para saber si ese animal ya está introducido en la BBDD
+     * 
+     * @version	v1.0.0	Thursday, February 13th, 2020.
+     * @param	mixed	$numchip	
+     * @return	mixed   Boolean dependiendo de si existe un animal con ese numChip
+     */
     function existeAnimal($numchip)
     {
         $this->db->conectar();
@@ -19,6 +35,18 @@ class AnimalesDAO
         return $numeroFilas <> 0;
     }
 
+
+    /**
+     * insertarAnimal.
+     *
+     * @author	Eneko Trabudua <etrabudua5@gmail.com>
+     * @since	v0.0.1
+     * 
+     * Inserta el registro con los datos del formulario validados a la BBDD
+     * 
+     * @version	v1.0.0	Thursday, February 13th, 2020.
+     * @param	mixed	$animal	
+     */
     function insertarAnimal($animal)
     {
         $this->db->conectar();
@@ -44,7 +72,19 @@ class AnimalesDAO
         $this->db->desconectar();
     }
 
-    function seleccionarTodosAnimales(){
+    /**
+     * seleccionarTodosAnimales.
+     *
+     * @author  Eneko Trabudua <etrabudua5@gmail.com>
+     * @since	v0.0.1
+     * 
+     * Se hace una consulta select para contar todos los animales que hay
+     * 
+     * @version	v1.0.0	Thursday, February 13th, 2020.
+     * @return	mixed $result 
+     */
+    function seleccionarTodosAnimales()
+    {
         $this->db->conectar();
         $sql = "SELECT * FROM animales";
         $result = $this->db->ejecutarSQL($sql);
