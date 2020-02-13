@@ -32,7 +32,7 @@ $idioma = [
 
     // Footer
     'proyecto' => "Proyecto DWES | Adopción Canina y Felina",
-    'realizado' => "Realizado por: Helecho Aguirre, Iñigo Trabudua y Acantilado Roldán."
+    'realizado' => "Realizado por: Iranzu Aguirre, Eneko Trabudua e Itziar Roldán."
 ];
 
 ?>
