@@ -1,6 +1,22 @@
 <br>
+<?php
+if (Input::siEnviado("post")) {
+    $errores = $validador->getErrores();
+
+    if (!empty($errores)) {
+        echo "<div class='alert alert-danger errores alert-dismissible fade show border border-danger' role='alert'>";
+        foreach ($errores as $campo => $mensajeError) {
+            echo "<p>" . ucfirst($campo) . " - $mensajeError</p>\n";
+        }
+        echo "<button type='button' class='close' data-dismiss='alert' aria-label='Close'>";
+        echo "<span aria-hidden='true'>&times;</span>";
+        echo "</button>";
+        echo "</div>";
+    }
+}
+?>
 <div class="row row-cols-1">
-    <form class="form-horizontal" action="" method="POST">
+    <form class="form-horizontal formulario" action="" method="POST" enctype="multipart/form-data">
         <fieldset>
 
             <!-- Form Name -->
@@ -8,9 +24,18 @@
 
             <!-- Text input-->
             <div class="form-group">
+                <label class="col-md-12 control-label" for="numchip">Nº Chip</label>
+                <div class="col-md-12">
+                    <input id="numchip" name="numchip" type="text" placeholder="00000000A" class="form-control input-md" maxlength="9" value="<?php echo Input::get('numchip') ?>">
+                    <span class="help-block">Introduzca el número del chip del animal</span>
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
                 <label class="col-md-12 control-label" for="nombre">Nombre</label>
                 <div class="col-md-12">
-                    <input id="nombre" name="nombre" type="text" placeholder="Nombre" class="form-control input-md">
+                    <input id="nombre" name="nombre" type="text" placeholder="Nombre" class="form-control input-md" value="<?php echo Input::get('nombre') ?>">
                     <span class="help-block">Introduzca el nombre del animal</span>
                 </div>
             </div>
@@ -19,7 +44,7 @@
             <div class="form-group">
                 <label class="col-md-12 control-label" for="edad">Edad</label>
                 <div class="col-md-12">
-                    <input id="edad" name="edad" type="text" placeholder="Edad" class="form-control input-md">
+                    <input id="edad" name="edad" type="text" placeholder="Edad" class="form-control input-md" value="<?php echo Input::get('edad') ?>">
                     <span class="help-block">Introduzca la edad del animal</span>
                 </div>
             </div>
@@ -28,7 +53,7 @@
             <div class="form-group">
                 <label class="col-md-12 control-label" for="procedencia">Procedencia</label>
                 <div class="col-md-12">
-                    <input id="procedencia" name="procedencia" type="text" placeholder="Procedencia" class="form-control input-md">
+                    <input id="procedencia" name="procedencia" type="text" placeholder="Procedencia" class="form-control input-md" value="<?php echo Input::get('procedencia') ?>">
                     <span class="help-block">Introduzca la procedencia del animal</span>
                 </div>
             </div>
@@ -36,38 +61,27 @@
             <!-- Multiple Radios -->
             <div class="form-group">
                 <label class="col-md-12 control-label" for="genero">Género</label>
-                <div class="col-md-12">
+                <div class="col-md-12" id="genero">
                     <div class="radio">
                         <label for="genero-0">
-                            <input type="radio" name="genero" id="genero-0" value="Macho" checked="checked">
+                            <input type="radio" name="genero" id="genero-0" value="Macho" <?php Utilidades::verificarBotones(Input::get('genero'), "Macho") ?>>
                             Macho
                         </label>
                     </div>
                     <div class="radio">
                         <label for="genero-1">
-                            <input type="radio" name="genero" id="genero-1" value="Hembra">
+                            <input type="radio" name="genero" id="genero-1" value="Hembra" <?php Utilidades::verificarBotones(Input::get('genero'), "Hembra") ?>>
                             Hembra
                         </label>
                     </div>
                 </div>
             </div>
 
-            <!-- Select Basic -->
-            <!-- <div class="form-group">
-                <label class="col-md-12 control-label" for="tipo">Tipo de animal</label>
-                <div class="col-md-12">
-                    <select id="tipo" name="tipo" class="form-control">
-                        <option value="Perro">Perro</option>
-                        <option value="Gato">Gato</option>
-                    </select>
-                </div>
-            </div> -->
-
             <!-- Text input-->
             <div class="form-group">
                 <label class="col-md-12 control-label" for="raza">Raza</label>
                 <div class="col-md-12">
-                    <input id="raza" name="raza" type="text" placeholder="Raza" class="form-control input-md">
+                    <input id="raza" name="raza" type="text" placeholder="Raza" class="form-control input-md" value="<?php echo Input::get('raza') ?>">
                     <span class="help-block">Introduzca la raza del animal</span>
                 </div>
             </div>
@@ -85,8 +99,15 @@
                 <label class="col-md-12 control-label" for="salud">Salud</label>
                 <div class="col-md-12">
                     <select id="salud" name="salud" class="form-control">
-                        <option value="Buena Salud">Buena salud</option>
-                        <option value="Mala Salud">Mala salud</option>
+                        <?php
+                        $valores = ["Buena Salud", "Mala Salud"];
+                        foreach ($valores as $val) {
+                            echo "<option value='$val'";
+                            echo Utilidades::verificarLista(Input::get('salud'), $val);
+                            echo ">$val</option>";
+                        }
+                        ?>
+
                     </select>
                 </div>
             </div>
@@ -95,7 +116,7 @@
             <div class="form-group">
                 <label class="col-md-12 control-label" for="descripcion">Descripción</label>
                 <div class="col-md-12">
-                    <textarea class="form-control" id="descripcion" name="descripcion" placeholder="Introduzca una pequeña descripción del animal"></textarea>
+                    <textarea class="form-control" id="descripcion" name="descripcion" placeholder="Introduzca una pequeña descripción del animal"><?php echo Input::get('descripcion') ?></textarea>
                 </div>
             </div>
 
@@ -110,7 +131,7 @@
             <div class="form-group">
                 <label class="col-md-12 control-label" for="enviar"></label>
                 <div class="col-md-12">
-                    <button id="enviar" name="enviar" value="hola" class="btn btn-outline-dark btn-lg btn-block">Enviar</button>
+                    <button id="enviar" name="enviar" value="validar" class="btn btn-outline-dark btn-lg btn-block">Enviar</button>
                 </div>
             </div>
 
@@ -118,7 +139,10 @@
     </form>
 </div>
 <br>
+
 <?php
-include 'vistas/vistaInicio.php';
-include 'vistas/pie.php';
+if (isset($resultado)) {
+    echo $resultado;
+}
+include 'includes/pie.php';
 ?>
