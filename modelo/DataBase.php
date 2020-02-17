@@ -23,6 +23,7 @@ class DataBase implements IDataBase
 
             $datos = "mysql:host=localhost;dbname=adoptamedb";
             $this->conexion = new PDO($datos, 'root', '');
+            $this->conexion->exec("set names utf8");
 
             return $this->conexion;
         } catch (PDOException $error) {

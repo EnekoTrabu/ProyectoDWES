@@ -37,20 +37,6 @@
                 </li>
                 
             </ul>
-
-            <ul class="navbar-nav">
-                <form class="form-inline" method="post">
-                    <div class="form-group mb-2">
-                        <label for="email" class="sr-only">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="name@example.com">
-                    </div>
-                    <div class="form-group mx-sm-3 mb-2">
-                        <label for="inputPassword2" class="sr-only">Password</label>
-                        <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
-                    </div>
-                    <button type="submit" class="btn btn-danger mb-2">Entrar</button>
-                </form>
-            </ul>
             <ul class="navbar-nav ml-md-auto">
                 <form method="get" class="form-inline">
                     <div class="form-group mx-sm-3 mb-2">

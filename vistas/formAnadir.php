@@ -126,13 +126,6 @@ if (Input::siEnviado("post")) {
                 </div>
             </div>
 
-            <!-- Input oculto -->
-            <!--<div class="form-group">
-                <div class="col-md-12">
-                    <input id="post" name="post" type="hidden" value="true" class="form-control input-md">
-                </div>
-            </div>-->
-
             <!-- Button -->
             <div class="form-group">
                 <label class="col-md-12 control-label" for="enviar"></label>
