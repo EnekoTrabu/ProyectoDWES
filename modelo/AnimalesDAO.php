@@ -52,15 +52,15 @@ class AnimalesDAO
         $this->db->conectar();
         $sql = "INSERT INTO animales (numChip, nombre, edad, procedencia, genero, raza, foto, salud, descripcion) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $args = [
-            utf8_decode($animal->getNumChip()),
-            utf8_decode($animal->getNombre()),
-            utf8_decode($animal->getEdad()),
-            utf8_decode($animal->getProcedencia()),
-            utf8_decode($animal->getGenero()),
-            utf8_decode($animal->getRaza()),
+            $animal->getNumChip(),
+            $animal->getNombre(),
+            $animal->getEdad(),
+            $animal->getProcedencia(),
+            $animal->getGenero(),
+            $animal->getRaza(),
             $animal->getFoto(),
-            utf8_decode($animal->getSalud()),
-            utf8_decode($animal->getDescripcion())
+            $animal->getSalud(),
+            $animal->getDescripcion()
         ];
 
         try {
