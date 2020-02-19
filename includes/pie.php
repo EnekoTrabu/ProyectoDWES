@@ -15,23 +15,9 @@ if (isset($_SESSION['idioma'])) {
         <p><?php echo $idioma['proyecto'] ?></p>
         &copy;
         <?php
-        if (isset($lang)) {
-            if ($lang == "eusk") {
-                setlocale(LC_TIME, 'Basque');
-                $fecha = strftime("%A, %Yko  %Bren %da");
-                echo utf8_encode($fecha);
-            } else {
-                setlocale(LC_TIME, 'Spanish');
-                $fecha = strftime("%A, %d  %B %Y");
-                echo utf8_encode($fecha);
-            }
-        } else {
             setlocale(LC_TIME, 'Spanish');
-                $fecha = strftime("%A, %d  %B %Y");
-                echo utf8_encode($fecha);
-        }
-        
-
+            $fecha = strftime("%A, %d  %B %Y");
+            echo utf8_encode($fecha);
         ?>
         <br>
         <?php echo $idioma['realizado'] ?>
