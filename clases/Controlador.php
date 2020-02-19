@@ -80,6 +80,10 @@ class Controlador
             $_POST['genero'] = "";
         }
 
+        if (!isset($_POST['foto'])) {
+            $_POST['foto'] = "";
+        }
+
         $validador->validar($_POST, $reglasValidacion, $_SESSION["idioma"]);
 
         if ($validador->esValido()) {
@@ -124,13 +128,18 @@ class Controlador
 
     private function crearAnimal($datos, $foto)
     {
+        $limite_kb = 16384;
         $numChip = htmlspecialchars(stripslashes($datos['numchip']));
         $nombre = htmlspecialchars(stripslashes($datos['nombre']));
         $edad = htmlspecialchars(stripslashes($datos['edad']));
         $procedencia = htmlspecialchars(stripslashes($datos['procedencia']));
         $genero = htmlspecialchars(stripslashes($datos['genero']));
         $raza = htmlspecialchars(stripslashes($datos['raza']));
-        $foto = base64_encode(file_get_contents($foto['foto']['tmp_name']));;
+        if($_FILES['foto']['error'] == 1){
+            $foto = base64_encode(file_get_contents("img/no_disponible.png"));
+        }else{
+            $foto = base64_encode(file_get_contents($foto['foto']['tmp_name']));
+        }
         $salud = htmlspecialchars(stripslashes($datos['salud']));
         $descripcion = htmlspecialchars(stripslashes($datos['descripcion']));
         $animal = new Animales($numChip, $nombre, $edad, $procedencia, $genero, $raza, $foto, $salud, $descripcion);

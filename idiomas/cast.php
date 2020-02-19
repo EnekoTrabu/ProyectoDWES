@@ -9,7 +9,7 @@ $idioma = [
     'cambiar' => 'Cambiar',
     //Formulario añadir
     'tituloForm' => 'Añadir Nuevo Animal',
-    'campoChip' => 'Nº Chip',
+    'campoChip' => 'Numchip',
     'descChip' => 'Introduzca el número del chip del animal',
     'campoNombre' => 'Nombre',
     'descNombre' => 'Introduzca el nombre del animal',
@@ -17,7 +17,7 @@ $idioma = [
     'descEdad' => 'Introduzca la edad del animal',
     'campoProcedencia' => 'Procedencia',
     'descProcedencia' => 'Introduzca la procedencia del animal',
-    'campoGenero' => 'Género',
+    'campoGenero' => 'Genero',
     'genero1' => 'Macho',
     'genero2' => 'Hembra',
     'campoRaza' => 'Raza',

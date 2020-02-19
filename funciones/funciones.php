@@ -38,7 +38,7 @@ function crearTarjeta($idioma, $nombre, $edad, $procedencia, $genero, $raza, $fo
         ];
     }else{
         $valoresIdioma = [
-            "edad" => "edad",
+            "edad" => "años",
             "procedencia" => "Procedencia",
             "noProcedencia" => "Sin procedencia"
         ];
