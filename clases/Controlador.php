@@ -80,7 +80,9 @@ class Controlador
             $_POST['genero'] = "";
         }
 
-        if (!isset($_POST['foto'])) {
+        if ($_FILES['foto']['name'] != "") {
+            $_POST['foto'] = $_FILES['foto']['name'];
+        }else{
             $_POST['foto'] = "";
         }
 

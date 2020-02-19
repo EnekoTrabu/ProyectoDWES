@@ -20,9 +20,9 @@ function crearTarjeta($idioma, $nombre, $edad, $procedencia, $genero, $raza, $fo
 {
     if($idioma == "eusk"){
         if($genero == "Macho"){
-            $genero = "Ar";
+            $genero = "Arra";
         }else{
-            $genero = "Eme";
+            $genero = "Emea";
         }
 
         if($salud == "Buena Salud"){
