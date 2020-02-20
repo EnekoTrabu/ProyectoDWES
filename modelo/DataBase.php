@@ -21,12 +21,12 @@ class DataBase implements IDataBase
 
         try {
 
-            //$datos = "mysql:host=localhost;dbname=adoptamedb";
-            //$this->conexion = new PDO($datos, 'root', '');
+            $datos = "mysql:host=localhost;dbname=adoptamedb";
+            $this->conexion = new PDO($datos, 'root', '');
 
             
-            $datos = "mysql:host=localhost;dbname=id12629186_adoptame";
-            $this->conexion = new PDO($datos, 'id12629186_alumno', 'alumno');
+            //$datos = "mysql:host=localhost;dbname=id12629186_adoptame";
+            //$this->conexion = new PDO($datos, 'id12629186_alumno', 'alumno');
             
             $this->conexion->exec("set names utf8");
 
