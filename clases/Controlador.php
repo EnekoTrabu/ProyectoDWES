@@ -18,6 +18,7 @@ class Controlador
             $lang = $_SESSION["idioma"];
             include "idiomas/".$lang.".php";
         }else{
+            $_SESSION['idioma'] = "cast";
             include "idiomas/cast.php";
         }
 
